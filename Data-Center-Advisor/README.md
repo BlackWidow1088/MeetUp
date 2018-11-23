@@ -1,14 +1,4 @@
-# Data-Center-Advisor
-
-Web application boilerplate which manages the data center operations.
-
-
-Feature Set:
-1)
-
-
-
-# Application Details
+# DataCenterAdvisor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
