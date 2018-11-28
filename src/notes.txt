@@ -1,0 +1,18 @@
+Design patterns can be categorised into the following categories based on what and how they aim to achieve
+
+Creational: deal with object creation
+Structural: deal with relationships between objects (or other entities)
+Behavioural: deal with communication patterns between objects
+Concurrency: deal with multi-threaded paradigms
+
+a) Factory Pattern:
+The factory pattern is one of the creational software design patterns.
+This design pattern provides a generic interface to create objects.
+It works with a creator that produces products. When using the factory pattern,
+we are not required to use the new keyword because the instantiation of additional classes
+are done in the factory implementation
+When to use the factory pattern?
+The factory pattern can be used in situations where the object creation process is complex or in situations where
+multiple object are created that share the same properties.
+In angular application, we have dependency injection pattern. So factory pattern is not used because there
+will be cases of circular dependency injection.

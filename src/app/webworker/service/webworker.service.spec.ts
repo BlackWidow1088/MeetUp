@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { WebWorkerService } from './web-worker.service';
+import { WebworkerService } from './webworker.service';
 
-describe('Service: WebWorker', () => {
+describe('Service: Webworker', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [WebWorkerService]
+      providers: [WebworkerService]
     });
   });
 
-  it('should ...', inject([WebWorkerService], (service: WebWorkerService) => {
+  it('should ...', inject([WebworkerService], (service: WebworkerService) => {
     expect(service).toBeTruthy();
   }));
 });

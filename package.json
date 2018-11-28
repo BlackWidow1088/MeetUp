@@ -1,13 +1,15 @@
 {
-  "name": "data-center-advisor",
+  "name": "Data-Center-Advisor",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "concurrently --kill-others \"npm run dev-worker\" \"ng serve\" ",
+    "build": "npm run build-worker && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev-worker": "ng run Data-Center-Advisor:build-worker --watch=true",
+    "build-worker": "ng run Data-Center-Advisor:build-worker --source-map=false"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
+    "@angular-builders/custom-webpack": "^2.4.0",
+    "replace-in-file-webpack-plugin": "^1.0.6",
     "@angular/cli": "~6.1.2",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
@@ -33,6 +37,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "concurrently": "^3.5.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

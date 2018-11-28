@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { WebworkerModule } from './webworker/webworker.module';
+import { USER } from 'src/app/model';
 
 @NgModule({
    declarations: [
@@ -18,7 +20,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
    ],
    imports: [
       BrowserModule,
-      CoreModule.forRoot({userName: 'blackWidow1088'}),
+      CoreModule.forRoot({userName: USER}),
+      WebworkerModule.forRoot({userName: USER}),
       SharedModule,
       AppRoutingModule
    ],

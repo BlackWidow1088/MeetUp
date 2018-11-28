@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  workerPath: 'assets/workers/main.js?t=' + Date.now()
 };

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebworkerService } from 'src/app/webworker/service';
 
 @Component({
   selector: 'app-compute-landing',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputeLandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private webWorkerService: WebworkerService) { }
 
   ngOnInit() {
+    const id = this.webWorkerService.createWorker();
+    const subs = this.webWorkerService.listenWorker(id).subscribe(data => {
+      console.log('inside compute landing');
+      console.log(data);
+    });
+    this.webWorkerService.assignWorker(id, {
+      topic: this.webWorkerService.workerTopicList.computeWorker,
+      data: {message: 'message passed from compute landing'}
+    });
   }
 
 }

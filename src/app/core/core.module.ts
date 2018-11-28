@@ -6,8 +6,8 @@
 
 // Consider making CoreModule a pure services module with no declarations.
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { ApiBaseService, DataService, SystemService, SystemServiceConfig,
-   LoggerService, AuthenticationService, CommonErrorService } from './service';
+import { ApiBaseService, DataService, SystemService,
+   LoggerService, AuthenticationService, CommonErrorService, CoreServiceConfig } from './service';
 import { AuthGuard } from 'src/app/core/guard';
 
 // module type: Core Module
@@ -31,11 +31,11 @@ export class CoreModule {
     }
   }
 
-  static forRoot(config: SystemServiceConfig): ModuleWithProviders {
+  static forRoot(config: CoreServiceConfig): ModuleWithProviders {
     return {
       ngModule: CoreModule,
       providers: [
-        {provide: SystemServiceConfig, useValue: config }
+        {provide: CoreServiceConfig, useValue: config }
       ]
     };
   }

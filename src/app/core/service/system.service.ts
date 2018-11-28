@@ -1,14 +1,12 @@
 
 import { Injectable, Optional } from '@angular/core';
+import { CoreServiceConfig } from 'src/app/core/service/core-service-config';
 
-export class SystemServiceConfig {
-  userName = 'Default User';
-}
 @Injectable({
   providedIn: 'root'
 })
 export class SystemService {
 
-constructor(@Optional() config: SystemServiceConfig) { }
+constructor(@Optional() config: CoreServiceConfig) { }
 
 }
