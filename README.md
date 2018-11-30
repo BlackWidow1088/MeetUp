@@ -11,7 +11,7 @@ Feature Set:
 
 1) Application uses single central store for data. It manages state using redux 3 core principles for
 state management. Store Module is responsible for exposing the required functionality and is eagerly loaded in application.
-So it is advisable to declare all the data models in src/app/model folder.
+So it is advisable to declare all the data models in src/app/application-store/model folder.
 
 
 ## Application Details
