@@ -7,6 +7,8 @@ import { CoreServiceConfig } from 'src/app/core/service/core-service-config';
 })
 export class SystemService {
 
-constructor(@Optional() config: CoreServiceConfig) { }
+constructor(@Optional() config: CoreServiceConfig) {
+  console.log(config);
+ }
 
 }

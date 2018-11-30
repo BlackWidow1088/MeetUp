@@ -16,3 +16,9 @@ The factory pattern can be used in situations where the object creation process 
 multiple object are created that share the same properties.
 In angular application, we have dependency injection pattern. So factory pattern is not used because there
 will be cases of circular dependency injection.
+
+javascript offers Map(like linkedhashmap), Set built in object types.
+
+Importance of <> type in typescript
+importance of d.ts and its usage.
+

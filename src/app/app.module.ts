@@ -12,7 +12,9 @@ import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { WebworkerModule } from './webworker/webworker.module';
-import { USER } from 'src/app/model';
+import { StoreModule } from 'src/app/store/store.module';
+import { USER, initialState } from 'src/app/application-store/model';
+import { applicationContainer } from 'src/app/application-store/application-container.const';
 
 @NgModule({
    declarations: [
@@ -22,6 +24,7 @@ import { USER } from 'src/app/model';
       BrowserModule,
       CoreModule.forRoot({userName: USER}),
       WebworkerModule.forRoot({userName: USER}),
+      StoreModule.forRoot({containers: applicationContainer, initialState: initialState}),
       SharedModule,
       AppRoutingModule
    ],

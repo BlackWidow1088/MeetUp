@@ -35,7 +35,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        {provide: CoreServiceConfig, useValue: config }
+        {provide: CoreServiceConfig, useValue: config },
       ]
     };
   }
