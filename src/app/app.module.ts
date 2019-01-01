@@ -15,6 +15,8 @@ import { WebworkerModule } from './webworker/webworker.module';
 import { StoreModule } from 'src/app/store/store.module';
 import { USER, initialState } from 'src/app/application-store/model';
 import { applicationContainer } from 'src/app/application-store/application-container.const';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
    declarations: [
@@ -26,7 +28,8 @@ import { applicationContainer } from 'src/app/application-store/application-cont
       WebworkerModule.forRoot({userName: USER}),
       StoreModule.forRoot({containers: applicationContainer, initialState: initialState}),
       SharedModule,
-      AppRoutingModule
+      AppRoutingModule,
+      ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
    ],
   providers: [],
   bootstrap: [AppComponent]
