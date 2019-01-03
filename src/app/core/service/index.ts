@@ -5,3 +5,4 @@ export * from './system.service';
 export * from './api-base.service';
 export * from './data.service';
 export * from './core-service-config';
+export * from './newsletter.service';

@@ -3,6 +3,7 @@ import { DashboardComponent } from 'src/app/main-layout/dashboard/dashboard.comp
 import { AuthGuard } from 'src/app/core/guard/index';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { LessonsComponent } from './lessons/lessons.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'app/dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'app/lessons',
+        component: LessonsComponent
       }
     ]
   }
