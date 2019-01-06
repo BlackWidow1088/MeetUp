@@ -11,13 +11,22 @@ if (environment.production) {
 function configureLanguage() {
   const url = document.URL;
   const lang = environment.supportedLanguages;
-  lang.forEach(item => {
+  for (const item of lang) {
     if (url.includes(item)) {
-      const node = document.getElementsByTagName('base')[0];
-      node.href = `/${item}`;
       environment.userLanguage = item;
+      setBaseHref();
+      return;
     }
-  });
+  }
+  environment.userLanguage = navigator.language;
+  if (environment.userLanguage === 'en-US') {
+    environment.userLanguage = 'en';
+  }
+  setBaseHref();
+}
+function setBaseHref() {
+  const node = document.getElementsByTagName('base')[0];
+  node.href = `/${environment.userLanguage}`;
 }
 configureLanguage();
 

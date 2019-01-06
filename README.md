@@ -11,7 +11,8 @@ So it is advisable to declare all the data models in src/app/application-store/m
 2) Application uses HTML5 webworker. Webworker module is responsible for 
 handling webworker related work available in src/app/webworker
 3) Progressive Web application.
-4) Push Notifications
+4) Push Notifications.
+5) Internationalisation. Dynamic multilingual application support.
 
 ## Application Details
 

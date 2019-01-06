@@ -21,6 +21,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from 'src/app/services/http-interceptor.service';
 import { I18N_PROVIDERS } from 'src/app/utils/translator.util';
 import { I18NextModule, ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
+import { formatDateTime } from 'src/app/utils/date-time';
 
 @NgModule({
    declarations: [
@@ -49,6 +50,8 @@ import { I18NextModule, ITranslationService, I18NEXT_SERVICE } from 'angular-i18
 })
 export class AppModule {
   constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService) {
+    console.log(formatDateTime(new Date(2014, 6, 2),
+    'Do [de] MMMM YYYY'));
     this.i18NextService.events.languageChanged.subscribe(lang => {
       document.getElementsByTagName('title')[0].innerText = this.i18NextService.t('common:appTitle');
     });
