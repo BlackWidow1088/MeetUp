@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  workerPath: 'assets/workers/main.js?t=' + Date.now()
+  workerPath: 'assets/workers/main.js?t=' + Date.now(),
+  supportedLanguages: ['en', 'de', 'fr'],
+  userLanguage: 'en'
 };
 
 /*

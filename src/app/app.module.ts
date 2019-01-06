@@ -5,7 +5,7 @@
 // If you do import BrowserModule into a lazy loaded feature module, Angular returns an error telling you to use CommonModule instead.
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Inject } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from 'src/app/core/core.module';
@@ -17,7 +17,10 @@ import { USER, initialState } from 'src/app/application-store/model';
 import { applicationContainer } from 'src/app/application-store/application-container.const';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from 'src/app/services/http-interceptor.service';
+import { I18N_PROVIDERS } from 'src/app/utils/translator.util';
+import { I18NextModule, ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 
 @NgModule({
    declarations: [
@@ -31,12 +34,26 @@ import { HttpClientModule } from '@angular/common/http';
       SharedModule,
       AppRoutingModule,
       HttpClientModule,
-      ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+      ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+      I18NextModule.forRoot()
    ],
-  providers: [],
+  providers: [
+    I18N_PROVIDERS,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService) {
+    this.i18NextService.events.languageChanged.subscribe(lang => {
+      document.getElementsByTagName('title')[0].innerText = this.i18NextService.t('common:appTitle');
+    });
+  }
+ }
 
 // What's the difference between NgModules and JavaScript Modules?
 // n an Angular app, NgModules and JavaScript modules work together.
