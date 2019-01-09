@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from 'src/app/shared/notfound/notfound.component';
+import { AuthGuard } from './guards';
 
 // the search for navigation of routes is followed in the order as same as they are declared
 const appRoutes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     loadChildren: 'src/app/main-layout/main-layout.module#MainLayoutModule',
   },
   {

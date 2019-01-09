@@ -8,7 +8,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { ApiBaseService, DataService, SystemService,
    LoggerService, AuthenticationService, CommonErrorService, CoreServiceConfig } from './service';
-import { AuthGuard } from 'src/app/core/guard';
 
 // module type: Core Module
 // exports: services
@@ -19,8 +18,7 @@ import { AuthGuard } from 'src/app/core/guard';
     AuthenticationService,
     ApiBaseService,
     CommonErrorService,
-    DataService,
-    AuthGuard
+    DataService
     ]
 })
 export class CoreModule {

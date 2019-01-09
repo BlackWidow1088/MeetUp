@@ -1,15 +1,14 @@
 import { MainLayoutComponent } from 'src/app/main-layout/main-layout.component';
 import { DashboardComponent } from 'src/app/main-layout/dashboard/dashboard.component';
-import { AuthGuard } from 'src/app/core/guard/index';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LessonsComponent } from './lessons/lessons.component';
+import { AuthGuard } from 'src/app/guards';
 
 const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
     children: [
       {
         path: '',

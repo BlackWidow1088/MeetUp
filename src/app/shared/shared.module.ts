@@ -9,15 +9,24 @@
 // Import the SharedModule in your feature modules, both those loaded when the app starts and those you lazy load later.
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NotfoundComponent } from 'src/app/shared/notfound/notfound.component';
 
 // module type: Shared Module
 // exports: declarations, no providers recommended
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
+    NotfoundComponent
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     NotfoundComponent
   ]
 })

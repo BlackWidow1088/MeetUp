@@ -2,7 +2,6 @@ import { Subject, Subscription, fromEvent } from 'rxjs';
 import { WorkerMessage, WorkerTopic } from 'src/app/webworker/workers/model';
 import { environment } from 'src/environments/environment';
 import { LoggerService } from 'src/app/core/service';
-import { LogType } from 'src/app/core/model';
 import { WebworkerService } from 'src/app/webworker/service/webworker.service';
 
 export class Webworker {
@@ -24,7 +23,7 @@ export class Webworker {
       }, (error) => {
         this.logger.error({
           message: `webworker thread id: ${this.workerThreadId} failed
-        while processing webworker topic: ${this.workerTopic}`, type: LogType.error
+        while processing webworker topic: ${this.workerTopic}`, timestamp: new Date()
         });
         this.workerSubject.error(error);
       });

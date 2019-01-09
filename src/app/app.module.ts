@@ -22,6 +22,7 @@ import { HttpInterceptorService } from 'src/app/services/http-interceptor.servic
 import { I18N_PROVIDERS } from 'src/app/utils/translator.util';
 import { I18NextModule, ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 import { formatDateTime } from 'src/app/utils/date-time';
+import { AuthGuard } from './guards';
 
 @NgModule({
    declarations: [
@@ -44,7 +45,8 @@ import { formatDateTime } from 'src/app/utils/date-time';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true,
-    }
+    },
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -1,31 +1,34 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { AuthenticationService } from 'src/app/core/service/authentication.service';
 import { CommonErrorService } from 'src/app/core/service/common-error.service';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { StoreService } from 'src/app/store/service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiBaseService {
+  private authToken: any;
 
   constructor(
     private http: HttpClient,
     private errorService: CommonErrorService,
-    private authenticationService: AuthenticationService) { }
+    private storeService: StoreService) {
+    //  TODO: store service to store
+    this.authToken = localStorage.getItem('id_token');
+  }
 
   private buildUrl(endPoint: string) {
-    let apiURL = '';
+    const apiURL = '/api/';
     return apiURL.concat(endPoint);
   }
 
   private getHeaders = () => {
     let headers = new HttpHeaders();
-    const authToken = this.authenticationService.getAuthToken();
     headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Authorization', 'Bearer ' + authToken);
+    headers = headers.set('Authorization', 'Bearer ' + this.authToken);
     return headers;
   };
 

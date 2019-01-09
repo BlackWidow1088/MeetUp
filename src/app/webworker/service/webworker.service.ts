@@ -80,7 +80,6 @@ import { WebworkerServiceConfig } from 'src/app/webworker/service/webworker-serv
 import { WorkerTopic, WorkerMessage } from 'src/app/webworker/workers/model';
 import { Webworker } from 'src/app/webworker/model';
 import { LoggerService } from 'src/app/core/service';
-import { LogType } from 'src/app/core/model';
 
 @Injectable({
   providedIn: 'root'
@@ -106,7 +105,7 @@ export class WebworkerService {
       return isTerminated;
     }
     this.logger.error({message: `webworker thread id: ${id} not found with topic`
-    , type: LogType.error });
+    , timestamp: new Date() });
     return false;
   }
   assignWorker(id: number, workerMessage: WorkerMessage): boolean {
@@ -114,7 +113,7 @@ export class WebworkerService {
       return this.workers[id].assignToWorker(workerMessage);
     }
     this.logger.error({message: `webworker thread id: ${id} not found with topic`
-    , type: LogType.error });
+    , timestamp: new Date() });
     return false;
   }
 }
