@@ -1,0 +1,18 @@
+<div class="app-submenu-container app-added-space">
+  <p class="app-margin-b-none title">
+    <label for="app-sd-filter-all">Filter</label>
+    <p-checkbox id="#app-sd-filter-all" class="app-float-right" binary="true" [(ngModel)]="isSelectAll" (click)="toggleAll()" ngDefaultControl></p-checkbox>
+  </p>
+  <ul class="app-sub-category-key">
+    <li *ngFor="let category of appliedFilter | keyvalue">
+      <span> {{category.key}} </span>
+      <ul *ngFor="let component of appliedFilter[category.key]" class="app-padding-l-none">
+        <li>
+          <label for="app-sd-category-{{ component.label }}">{{ component.label }}</label>
+          <p-checkbox id="#app-sd-category-{{ component.label }}" class="app-float-right app-p-l-10" [(ngModel)]="component.checked" binary="true"
+            (click)="applyFilter()" ngDefaultControl></p-checkbox>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

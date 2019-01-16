@@ -1,0 +1,19 @@
+<div class="app-sidebar-layout">
+  <ul class="app-ul-sidebar">
+    <ng-container *ngFor="let opt of toolSidebarOptions; let index = index">
+      <li *ngIf="opt.isHidden" [ngClass]="{'app-a-active': opt.enabled}">
+        <a id="app-sd-tool-{{ opt.type }}" (click)="onClickTool(opt, index, $event)"
+          pTooltip="{{ !opt.enabled ? opt.linkText : (opt.linkDisabled ? opt.linkDisabled : opt.linkText) }}"
+          hideDelay="100">
+          <i class="app-link-icon has-hover app-{{ !opt.enabled ? opt.linkIcon : (opt.linkIconDisabled ? opt.linkIconDisabled : opt.linkIcon) }}" [ngClass]="{'has-active': opt.enabled}"></i>
+          <span #fpComponentCount class="app-sd-remove-count faa-tada faa-fast animated" *ngIf="opt.type === toolTypeStr.recycle && filterComponents.length">
+            {{ filterComponents.length }}
+          </span>
+        </a>
+        <app-tool-wrapper id="fpSubmenuWrapper" *ngIf="opt.open" [showSubMenu]="showSubMenu"></app-tool-wrapper>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+<app-legends [showLegend]="isShowLegend"></app-legends>

@@ -1,0 +1,10 @@
+<div *ngIf="showLegend && objectKeys(legendOptions)?.length" class="app-sys-legend">
+  <p class="app-margin-b-xxs app-padding-b-xxs title">Legends</p>
+  <ul>
+    <ng-container *ngFor="let legend of objectKeys(legendOptions)">
+      <li *ngIf="legendOptions[legend]" class="app-legend-{{ legendOptions[legend]?.colorClass }}">
+        {{ legend }}
+      </li>
+    </ng-container>
+  </ul>
+</div>

@@ -1,0 +1,84 @@
+@import 'src/scss/_variables.scss';
+
+.app-system-diagram-tooltip {
+  position: fixed;
+  padding: 5px 20px;
+  background-color: $app-background-color-medium-blue;
+  color: $app-color-white;
+  transition: 0.5s;
+  cursor: pointer;
+  pointer-events: none;
+
+  .header {
+    font-weight: $app-font-weight-bold;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.app-system-diagram {
+  background: $app-color-neutral-85;
+  overflow: hidden;
+  .app-sd {
+    &-node {
+      cursor: pointer;
+      display: block;
+    }
+    &-link {
+      cursor: pointer;
+    }
+  }
+}
+
+.app-sd-context-menu {
+  position: absolute;
+  background-color: $app-color-white;
+  border-radius: $app-border-radius-default;
+  border: $app-border-component-on-light;
+  box-shadow: 3px 3px 1px -1px $app-border-separator-on-dark-color;
+  > ul {
+    padding: 0;
+    margin: 2px 0;
+    li {
+      &.is-header,
+      &.is-disabled {
+        display: none;
+      }
+      &:not(.is-divider) {
+        padding: 5px 30px;
+        cursor: pointer;
+        &:hover {
+          color: $app-brand-color;
+          background-color: $app-color-neutral-84;
+        }
+        .fa {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.app-highlight-link {
+  opacity: 1;
+  animation: bounceStroke 1s ease infinite;
+}
+
+.app-dim-link {
+  opacity: 0.5;
+}
+
+@keyframes bounceStroke {
+  0% {
+    stroke-width: 1;
+  }
+  50% {
+    stroke-width: 2;
+  }
+  100% {
+    stroke-width: 1;
+  }
+}

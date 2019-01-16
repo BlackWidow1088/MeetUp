@@ -1,0 +1,22 @@
+<div class="app-submenu-container app-submenu-container-lg no-padding">
+  <p class="app-padding-xs app-padding-b-none app-margin-b-none app-bold">Devices</p>
+  <hr class="app-margin-b-xxs">
+
+  <ul class="app-sd-component-list">
+    <li *ngFor="let component of filterComponents">
+      <a id="app-sd-remove-{{ component.id }}" (click)="addComponent(component, $event)">
+        {{ component.label }} ({{ component.type }})
+        <i class="fa fa-undo app-float-right"></i>
+      </a>
+    </li>
+    <li *ngIf="!filterComponents.length">
+      <a>List is empty</a>
+    </li>
+    <li>
+      <a id="app-sd-remove-all" (click)="addAllComponent($event)" class="app-sd-restore-all" [ngClass]="{'app-btn-disabled' : !filterComponents.length}">
+        Recycle All
+        <i class="fa fa-undo app-float-right"></i>
+      </a>
+    </li>
+  </ul>
+</div>

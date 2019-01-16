@@ -1,0 +1,40 @@
+@import 'src/scss/_variables.scss';
+
+.app-icon-list {
+  padding: 0;
+  margin: 0;
+
+  > li {
+    display: inline-block;
+
+    > a {
+      display: inline-block;
+      background-color: $app-background-color-light;
+      padding: 5px;
+      margin-right: 10px;
+      height: 42px;
+      width: 34px;
+      &[disabled="true"] {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      &:hover {
+        box-shadow: 0 3px 10px 4px $app-border-component-on-light-color;
+      }
+    }
+  }
+}
+
+.app-default-input {
+  border: none;
+  border-bottom: $app-border-component-on-light;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.app-border-bottom {
+  border-bottom: $app-border-component-on-light;
+}

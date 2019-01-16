@@ -1,0 +1,25 @@
+@import 'src/scss/_variables.scss';
+
+.app-submenu-container {
+  position: absolute;
+  right: 49px;
+  top: -1px;
+  padding: 20px;
+  width: 160px;
+  background-color: $app-color-white;
+  border: $app-border-component-on-light;
+  text-align: left;
+  cursor: auto;
+
+  &-lg {
+    width: 250px;
+  }
+
+  &.app-added-space {
+    padding: 5px 7px;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+}

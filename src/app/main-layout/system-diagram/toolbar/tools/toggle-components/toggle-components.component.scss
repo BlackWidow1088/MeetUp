@@ -1,0 +1,25 @@
+@import 'src/scss/_variables.scss';
+
+.app-sd-component-list {
+  padding: 0;
+  margin: 2px 0;
+  > li > a {
+    padding: 7px 15px;
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;
+
+    &.app-sd-restore-all {
+      background-color: $app-brand-color;
+      color: $app-color-white;
+    }
+    &:not(.app-sd-restore-all):hover {
+      color: $app-brand-color;
+      background-color: $app-color-neutral-85;
+    }
+    > .fa {
+      position: relative;
+      top: 4px;
+    }
+  }
+}

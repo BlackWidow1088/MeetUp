@@ -1,0 +1,16 @@
+<div class="app-submenu-container app-submenu-container-lg">
+  <p class="app-border-bottom app-margin-b-sm app-padding-b-xxs app-bold" i18n="Export - CSA| Text for Export@@system-diagram-Export">Export System Diagram</p>
+
+  <label for="app-sd-filename" class="app-margin-b-xxs" i18n="Filename - CSA| Text for Filename@@system-diagram-filename">Filename</label>
+  <input id="app-sd-filename" type="text" [(ngModel)]="fileName" class="app-default-input" autofocus/>
+  <span *ngIf="!fileName?.length" class="app-error-text">* Please enter a filename</span>
+
+  <label class="app-margin-b-xs" i18n="Export as - CSA| Text for Export as@@system-diagram-export-as">Export as</label>
+  <ul class="app-icon-list">
+    <li *ngFor="let exportAs of exportTo">
+      <a tabindex="0" [attr.disabled]="!fileName?.length || exportAs.active" id="app-sd-{{ exportAs.type }}" (click)="onClickDownload(exportAs)" pTooltip="Download system diagram in .{{ exportAs.type }} format" tooltipPosition="bottom">
+        <i [ngClass]="updateIconClass(exportAs)"></i>
+      </a>
+    </li>
+  </ul>
+</div>

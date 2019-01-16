@@ -1,0 +1,80 @@
+@import 'src/scss/_variables.scss';
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+}
+
+.app-sidebar-layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+  display: block;
+  background: $app-color-neutral-85;
+
+  .app-ul-sidebar {
+    @include reset-list();
+    position: absolute;
+    right: 0;
+    width: 50px;
+    z-index: 1;
+
+    > li {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+
+      > a {
+        display: inline-block;
+        padding: 12px 10px;
+      }
+      .app-link-icon {
+        display: block;
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+    .app-a-active {
+      background-color: $app-background-color-white;
+    }
+  }
+}
+
+.app-list-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  padding-left: 0;
+  margin-bottom: 0;
+  z-index: 1;
+
+  li {
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-weight: $app-font-weight-bold;
+  }
+}
+
+.app-sys-filter {
+  position: absolute;
+  right: 49px;
+  top: -1px;
+}
+
+.app-sd-remove-count {
+  position: absolute;
+  top: 1px;
+  right: 6px;
+  color: $app-color-white;
+  padding: 3px 6px;
+  background-color: $app-brand-color;
+  border-radius: 50%;
+  font-size: 11px;
+}
+

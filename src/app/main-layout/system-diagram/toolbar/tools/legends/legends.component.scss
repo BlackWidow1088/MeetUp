@@ -1,0 +1,65 @@
+@import 'src/scss/_variables.scss';
+
+$app-chart-color-1: #C66900;
+$app-chart-color-5: #01ADBD;
+$app-chart-color-7: #0072D9;
+$app-chart-color-9: #B1B3BE;
+
+.app-sys-legend {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  padding: 10px;
+  width: 180px;
+  background-color: $app-color-white;
+  border: $app-border-component-on-light;
+
+  .title {
+    font-weight: $app-font-weight-semi-bold;
+    border-bottom: $app-border-component-on-light;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+
+    li {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 4px;
+        height: 12px;
+        width: 25px;
+        display: block;
+        text-align: center;
+        border-radius: $app-border-radius-default;
+      }
+      list-style-type: none;
+      margin-bottom: 8px;
+      padding-left: 34px;
+      position: relative;
+      &.app-legend {
+        &-purple:before {
+          background-color: $app-chart-color-7;
+        }
+        &-yellow:before {
+          background-color: $app-chart-color-1;
+        }
+        &-green:before {
+          background-color: $app-chart-color-5;
+        }
+        &-gray:before {
+          content: '⁃ ⁃ ⁃';
+          top: 0;
+          font-weight: $app-chart-color-9;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+

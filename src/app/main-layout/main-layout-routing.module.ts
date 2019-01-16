@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: 'src/app/main-layout/device/device.module#DeviceModule'
       },
       {
+        path: 'app/system-diagram',
+        loadChildren: 'src/app/main-layout/system-diagram/system-diagram.module#SystemDiagramModule',
+      },
+      {
         path: 'app/dashboard',
         component: DashboardComponent,
       },

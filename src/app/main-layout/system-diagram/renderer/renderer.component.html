@@ -1,0 +1,7 @@
+<app-system-error *ngIf="data?.error"></app-system-error>
+<div class="app-pos-relative" [ngClass]="{'app-hide': data?.error}">
+  <div #fpSystemGraph id="graphSvg" class="app-system-diagram app-padding-md app-margin-r-xxlg">
+    <app-legends [showLegend]="showLegend"></app-legends>
+  </div>
+  <app-system-diagram-toolbar [ngClass]="{'app-hide': !data?.nodes}" [systemDiagramOptions]="systemDiagramOptions"></app-system-diagram-toolbar>
+</div>

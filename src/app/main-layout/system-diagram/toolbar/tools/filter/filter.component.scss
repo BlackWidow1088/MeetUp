@@ -1,0 +1,17 @@
+@import 'src/scss/_variables.scss';
+
+.app-sub-category-key  {
+  margin: 0;
+  padding: 0;
+  > li {
+    > span {
+      padding: 3px 5px;
+      margin-bottom: 5px;
+      display: inline-block;
+      width: 100%;
+      text-transform: uppercase;
+      color: $app-color-black;
+      background: $color-gray-89;
+    }
+  }
+}
