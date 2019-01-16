@@ -1,0 +1,19 @@
+<div class="app-alert-container">
+  <ng-container *ngFor="let message of messages; let i = index">
+    <div class="alert app-alertmsg-margin" *ngIf="message && message.text?.length" [ngClass]="message.class">
+      <div *ngIf="message.style === 'single' || message.style === 'template'">
+        <app-single-line-message [message]="message" [ngClass]="{ 'app-margin-l-sm' : message.class === 'alert-danger'}"></app-single-line-message>
+        <i class="fa fa-close app-float-right app-cursor-pointer" *ngIf="message.isDismiss" (click)="dismissMessage(i)"></i>
+      </div>
+
+      <div *ngIf="message.style === 'collapsible'" class="ui-g">
+        <div class="ui-g-12 ui-md-11 ui-lg-11 ui-g-nopad">
+          <app-collapsable-message [message]="message"></app-collapsable-message>
+        </div>
+        <div class="ui-g-12 ui-md-1 ui-lg-1 ui-g-nopad">
+          <i class="fa fa-close app-float-right app-cursor-pointer app-padding-t-xxs" *ngIf="message.isDismiss" (click)="dismissMessage(i)"></i>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

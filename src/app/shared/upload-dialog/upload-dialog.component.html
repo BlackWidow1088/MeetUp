@@ -1,0 +1,18 @@
+<input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
+<div>
+  <h1>Upload Files</h1>
+  <div>
+    <button [disabled]="uploading || uploadSuccessful" (click)="addFiles()">
+      Add Files
+    </button>
+  </div>
+  <p-dialog [(visible)]="display" closable="false" closeOnEscape="false">
+      <button [disabled]="!canBeClosed" (click)="closeDialog()">{{primaryButtonText}}</button>
+    <ul>
+      <li *ngFor="let file of files">
+        <h4>{{file.name}}</h4>
+        <p-progressBar *ngIf="progress" mode="determinate" [value]="progress[file.name].progress | async"></p-progressBar>
+        <li>
+    </ul>
+  </p-dialog>
+</div>

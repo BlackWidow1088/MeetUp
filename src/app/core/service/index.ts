@@ -6,3 +6,5 @@ export * from './api-base.service';
 export * from './data.service';
 export * from './core-service-config';
 export * from './newsletter.service';
+export * from './upload.service';
+export * from './user-preference.service';

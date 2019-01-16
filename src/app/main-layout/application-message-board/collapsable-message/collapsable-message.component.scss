@@ -1,0 +1,42 @@
+@import './src/scss/variables.scss';
+
+.app-accordion .ui-accordion {
+  .ui-accordion-header {
+    background: transparent;
+    border-top: none;
+
+    &:not(.ui-state-active):not(.ui-state-disabled):hover {
+      background: transparent;
+      border-color : transparent;
+      color: $app-color-black;
+      a {
+        color: $app-feedback-color-error-primary;
+      }
+    }
+
+    a {
+      color: $app-feedback-color-error-primary;
+      padding-top: 0;
+
+      &:hover {
+        text-decoration:none;
+        color: $app-feedback-color-error-primary;
+      }
+    }
+
+    &.ui-state-active {
+      background: transparent;
+      color: $app-feedback-color-error-primary;
+    }
+    &.ui-state-default {
+      border : none;
+      color: $app-color-black;
+    }
+  }
+
+  .ui-accordion-content {
+    background: transparent;
+    color: $app-color-black;
+    padding: 0 0 4px 28px;
+  }
+}

@@ -13,4 +13,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  download() {
+    window.open('/api/download');
+  }
 }

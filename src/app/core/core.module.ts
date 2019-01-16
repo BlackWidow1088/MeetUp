@@ -7,7 +7,7 @@
 // Consider making CoreModule a pure services module with no declarations.
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { ApiBaseService, DataService, SystemService,
-   LoggerService, AuthenticationService, CommonErrorService, CoreServiceConfig } from './service';
+   LoggerService, AuthenticationService, CommonErrorService, CoreServiceConfig, UploadService } from './service';
 
 // module type: Core Module
 // exports: services
@@ -18,7 +18,8 @@ import { ApiBaseService, DataService, SystemService,
     AuthenticationService,
     ApiBaseService,
     CommonErrorService,
-    DataService
+    DataService,
+    UploadService
     ]
 })
 export class CoreModule {

@@ -11,6 +11,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NotfoundComponent } from 'src/app/shared/notfound/notfound.component';
+import { UploadDialogComponent } from './upload-dialog/upload-dialog.component';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {AccordionModule} from 'primeng/accordion';
+import {DialogModule} from 'primeng/dialog';
+import {CheckboxModule} from 'primeng/checkbox';
+import { SliderModule } from 'primeng/slider';
+import { TooltipModule } from 'primeng/tooltip';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 // module type: Shared Module
 // exports: declarations, no providers recommended
@@ -18,16 +26,34 @@ import { NotfoundComponent } from 'src/app/shared/notfound/notfound.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DialogModule,
+    ProgressBarModule,
+    AccordionModule,
+    CheckboxModule,
+    SliderModule,
+    TooltipModule
   ],
   declarations: [
-    NotfoundComponent
+    NotfoundComponent,
+    UploadDialogComponent,
+    EllipsisPipe
   ],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NotfoundComponent
+    NotfoundComponent,
+    UploadDialogComponent,
+    DialogModule,
+    ProgressBarModule,
+    EllipsisPipe,
+    AccordionModule,
+    CheckboxModule,
+    SliderModule,
+    TooltipModule
   ]
 })
 export class SharedModule { }
+// module exports means those classes (i.e. components and module exports)
+// are availble to modules outside it.

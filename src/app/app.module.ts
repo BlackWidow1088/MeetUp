@@ -5,6 +5,7 @@
 // If you do import BrowserModule into a lazy loaded feature module, Angular returns an error telling you to use CommonModule instead.
 
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, Inject } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -23,13 +24,17 @@ import { I18N_PROVIDERS } from 'src/app/utils/translator.util';
 import { I18NextModule, ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 import { formatDateTime } from 'src/app/utils/date-time';
 import { AuthGuard } from './guards';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderService } from './loader/loader.service';
 
 @NgModule({
    declarations: [
-      AppComponent
+      AppComponent,
+      LoaderComponent
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       CoreModule.forRoot({userName: USER}),
       WebworkerModule.forRoot({userName: USER}),
       StoreModule.forRoot({containers: applicationContainer, initialState: initialState}),
@@ -46,14 +51,15 @@ import { AuthGuard } from './guards';
       useClass: HttpInterceptorService,
       multi: true,
     },
-    AuthGuard
+    AuthGuard,
+    LoaderService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService) {
     console.log(formatDateTime(new Date(2014, 6, 2),
-    'Do [de] MMMM YYYY'));
+    'MMMM/DD/YYYY hh:mm A'));
     this.i18NextService.events.languageChanged.subscribe(lang => {
       document.getElementsByTagName('title')[0].innerText = this.i18NextService.t('common:appTitle');
     });
