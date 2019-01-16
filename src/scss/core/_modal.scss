@@ -1,0 +1,139 @@
+@import 'src/scss/_variables.scss';
+
+.app-modal {
+  overflow: visible;
+  bottom: auto;
+
+  label {
+    margin-bottom: 2px;
+  }
+
+  &.app-report-dialog {
+    max-height: 560px; // Based on laptop screen
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .app-modal-title,
+  .app-modal-label,
+  .app-modal-input,
+  input[placeholder] {
+    font-weight: $app-font-weight-light;
+  }
+
+  .app-modal-title,
+  .app-modal-input,
+  input[placeholder] {
+    color: $app-color-neutral-27;
+  }
+
+  .app-modal-label,
+  .app-modal-input {
+    font-size: $app-font-size-md;
+  }
+
+  .app-modal-title {
+    margin-left: -2px;
+    font-size: 24px;
+  }
+
+  .app-modal-label {
+    margin: $app-space-stack-xxs;
+  }
+
+  .app-modal-btn-save {
+    display: block;
+    text-align: right;
+  }
+
+  .app-modal-btn {
+    padding: 3px 12px;
+    text-align: center;
+  }
+
+  .app-modal-icon {
+    margin-right: $app-space-xs;
+  }
+
+  .app-modal-text {
+    font-weight: $app-font-weight-regular;
+  }
+
+  input {
+    box-sizing: border-box;
+    background-color: $app-color-neutral-85;
+    height: auto;
+  }
+
+  .alert {
+    padding: 0.75em;
+    border: 0;
+    border-radius: $app-border-radius-default;
+  }
+}
+
+.ui-dialog {
+  max-height: 100%;
+
+  &.ui-confirmdialog {
+    &.ui-widget {
+      .ui-dialog-titlebar {
+        .ui-dialog-title {
+          font-weight: $app-font-weight-light;
+          color: $app-color-neutral-27;
+          font-size: $app-font-size-lg;
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+
+  &.ui-widget {
+    .ui-dialog-titlebar {
+      padding: 1.5em 1.0em 0.5em 1.25em;
+    }
+
+    .ui-dialog-content {
+      padding: 1em;
+      background: $app-background-color-white;
+    }
+  }
+
+  .ui-dialog-titlebar-icon:hover {
+    border-color: $app-color-white;
+    background: $app-background-color-white;
+  }
+
+  .ui-dialog-titlebar-close {
+    position: relative;
+  }
+
+  .ui-corner-all,
+  .ui-dialog-footer {
+    border-radius: $app-border-radius-default;
+  }
+
+  .ui-widget-header {
+    background: $app-background-color-white;
+    border-bottom: $app-border-component-on-light;
+  }
+
+  .ui-dialog-footer {
+    padding-top: 15px;
+
+    button {
+      text-align: center;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.ui-inputtext {
+  &.ui-state-focus,
+  &:focus {
+    box-shadow: none;
+  }
+}

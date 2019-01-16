@@ -1,0 +1,26 @@
+.app-float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+  &-none {
+    float: none;
+  }
+}
+
+.app-text {
+  &-right {
+    text-align: right;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-justify {
+    text-align: justify;
+  }
+}

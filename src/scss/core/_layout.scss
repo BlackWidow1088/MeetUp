@@ -1,0 +1,143 @@
+// Layout style
+body {
+  .app {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Main container styles */
+
+.app-base-container {
+  position: relative;
+  height: calc(100% - 134px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: $app-color-neutral-85;
+  padding: 6px 5px;
+}
+
+
+// customized scrollbar for browser and tables
+::-webkit-scrollbar-track {
+  background-color: $app-color-neutral-85;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $app-color-neutral-85;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $app-color-neutral-84;
+}
+
+div::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: $app-color-neutral-84;
+}
+
+.app-hide {
+  display: none;
+}
+
+.app-pos-relative {
+  position: relative;
+}
+
+.app-inline-block {
+  display: inline-block;
+}
+
+.app-pos-fixed {
+  position: fixed;
+}
+
+.ui-widget button, .ui-widget input {
+  font-size: 14px;
+  font-family: $default-font-family;
+}
+
+.app-scrollable-wrapper {
+  overflow: auto;
+}
+
+.app-flex-1 {
+  flex: 1;
+}
+
+.app-flex-justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.app-calendar-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: $app-border-radius-default;
+
+  .ui-datepicker.ui-widget {
+    width: 100%;
+
+    .ui-datepicker-calendar td {
+      border-bottom: 0;
+      height: 37px;
+      width: 37px;
+
+      .ui-state-highlight {
+        border-radius: 50%;
+      }
+
+      a {
+        border-radius: 50%;
+        height: 37px;
+        width: 37px;
+
+        &.ui-state-active {
+          background-color: $app-color-neutral-34;
+        }
+      }
+    }
+  }
+
+  .ui-timepicker {
+    display: none;
+  }
+
+  .ui-inputtext {
+    height: 38px;
+    padding: 14px 9px;
+
+    &:not([disabled]) {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border: $app-border-component-on-light;
+      color: $app-color-black;
+    }
+  }
+
+  .ui-datepicker-trigger {
+    right: 0;
+    background-color: transparent;
+    border: 0;
+    color: $app-brand-color;
+    opacity: 1;
+
+    &.ui-button:enabled:hover,
+    &.ui-button:hover,
+    &.ui-button:focus {
+      background-color: transparent;
+      border: 0;
+      color: $app-brand-color;
+    }
+  }
+}

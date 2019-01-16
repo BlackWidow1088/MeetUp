@@ -1,0 +1,133 @@
+$color-sortable-column-ui-state-highlight: #1b1d1f;
+$color-table-body-border: #D5D5D5;
+$color-sortable-column-background: #ebedf0;
+
+.app-p-table {
+
+  //MultiSelect styling
+  p-multiselect {
+    float: right;
+    margin-top: 5px;
+
+    .ui-multiselect {
+      .ui-multiselect-label {
+        display: none;
+      }
+
+      .ui-multiselect-trigger {
+        right: -4px;
+        top: -2px;
+        .ui-clickable:before {
+          content: '\e94c';
+          font-size: $app-font-size-h6-lg;
+          color: $app-text-color-primary-on-light;
+        }
+      }
+
+      &.app-multiselect-active {
+        .ui-multiselect-trigger {
+          .ui-clickable:before {
+            color: $app-interactive-color-focus;
+          }
+        }
+      }
+    }
+  }
+
+  //Custom filter styling
+  .ui-column-filter {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: .25em;
+    right: 27px;
+  }
+
+  //Paginator styling
+  .ui-paginator {
+    text-align: end;
+    font-size: $app-font-size-h6-lg;
+    .ui-paginator-page {
+      line-height: 1.3em;
+      font-size: $app-font-size-sm;
+    }
+  }
+
+  //Table styling
+  &.ui-table {
+    
+    .ui-table-thead>tr>th {
+      height: 45px;
+    }
+
+    .ui-table-tbody {
+      border: 1px solid $color-table-body-border;
+      border-top: none;
+    }
+    
+    .ui-table-tbody > tr > td {
+      padding: $app-space-inset-xs .5em;
+      border: none;
+      word-wrap: break-word;
+    }
+
+    .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+      color: $color-sortable-column-ui-state-highlight;
+    }
+    
+    .ui-sortable-column.ui-state-highlight {
+      background-color: $color-sortable-column-background;
+      color: $color-sortable-column-ui-state-highlight;
+    }
+    
+    .ui-sortable-column-icon {
+      float: right;
+      padding: 3px 0;
+    }
+
+    //search box styling
+    .ui-table-caption {
+      text-align: left;
+      border: none;
+      background: $app-background-color-white;
+      padding-left: 0px;
+
+      .app-table-filter-input-box {
+        padding-left: 10px;
+        padding-right: 25px;
+        width: 200px;
+      }
+
+      .app-table-search-icon {
+        margin-left: -18px;
+      }
+    }
+  }
+}
+
+.ui-paginator .ui-paginator-page.ui-state-default{
+  margin-top: 0px;
+}
+
+.ui-paginator .ui-paginator-page.ui-state-active{
+  margin-top: 0px;
+}
+
+.ui-paginator .ui-paginator-icon {
+  font-size: $app-font-size-h6-lg;
+  margin-top: -10px;
+}
+
+.ui-paginator a {
+  background: 0 0;
+  border: none;
+}
+
+.ui-paginator-left-content {
+  font-size: $app-font-size-sm;
+  margin-top: 3px;
+}
+
+.ui-paginator-pages {
+  padding-top: 3px;
+}

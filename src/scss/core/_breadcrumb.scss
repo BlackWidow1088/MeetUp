@@ -1,0 +1,9 @@
+@import 'src/scss/_variables.scss';
+
+// core for breadcrumb
+.app-breadcrumb-container {
+  height: $breadcrumb-height;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(104, 104, 104, 0.1);
+  background-color: $app-text-color-primary-on-dark;
+}

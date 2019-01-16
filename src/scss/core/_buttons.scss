@@ -1,0 +1,209 @@
+$disabled-btn-background : #E2E2E2;
+$disabled-btn-color : #B2B2B2;
+
+.app-btn,
+a.app-btn,
+.app-btn.ui-togglebutton.ui-button.ui-state-default {
+  display: inline-block;
+  border-radius: 2px;
+  padding: 6px 12px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+
+  &-min {
+    min-width: 90px;
+  }
+  &-small {
+    padding: 4px 10px;
+  }
+  &-large {
+    padding: 11px 12px;
+  }
+
+  &-primary,
+  &-primary.ui-togglebutton.ui-button.ui-state-default,
+  &-primary.ui-button.ui-state-default {
+    background-color: $app-brand-color;
+    border: 1px solid $app-brand-color;
+    color: $app-background-color-white;
+    cursor: pointer;
+
+    &[disabled] {
+      background-color: $disabled-btn-background;
+      border: 1px solid $disabled-btn-background;
+      color: $disabled-btn-color;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $app-interactive-color-hover;
+      border-color: $app-interactive-color-hover;
+    }
+  }
+
+  &-secondary {
+    background-color: $app-background-color-white;
+    border: 1px solid $app-brand-color;
+    color: $app-brand-color;
+    cursor: pointer;
+
+    &:not([href]):not([tabindex]):hover,
+    &:hover,
+    &:active {
+      background-color: $app-brand-color;
+      border-color: $app-brand-color;
+      color: $app-background-color-white;
+    }
+  }
+
+  &-disabled {
+    background-color: $disabled-btn-background;
+    border: 1px solid $disabled-btn-background;
+    color: $disabled-btn-color;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &-disabled-link {
+    color: $app-text-color-disabled-on-light !important; // the anchor tag has default color inherited, which over powers our css class. Thus, using important.
+    cursor: not-allowed;
+    pointer-events: none;
+    display: inline-block;
+  }
+
+  &-disabled-tooltip {
+    color: $app-text-color-disabled-on-light;
+    cursor: not-allowed;
+  }
+
+  &-export {
+    background-color: transparent;
+    color: $app-brand-color;
+    border: none;
+    margin: 8px 5px 0 10px;
+    font-size: $app-font-size-h6-lg;
+    cursor: pointer;
+  }
+
+  &-success,
+  &-success.ui-togglebutton.ui-button.ui-state-default {
+    background-color: $app-feedback-color-success-chart;
+    border: 1px solid $app-feedback-color-success-chart;
+    color: $app-text-color-primary-on-light;
+    cursor: pointer;
+
+    &[disabled] {
+      background-color: $disabled-btn-background;
+      border: 1px solid $disabled-btn-background;
+      color: $disabled-btn-color;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $app-feedback-color-success-primary;
+      border-color: $app-feedback-color-success-primary;
+    }
+  }
+
+  &-link {
+    background: transparent;
+    color: $app-background-color-white;
+    &:hover {
+      color: $app-background-color-white;
+    }
+  }
+}
+
+.app-btn-actions {
+  padding: 0 8px;
+  height: 30px;
+  width: 32px;
+}
+
+.app-license-status-width {
+  width: 25px;
+  margin-right: 5px;
+}
+
+// toggle switch CSS
+
+.app-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 21px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: $app-space-xxs;
+    bottom: $app-space-xxs;
+    background-color: $app-background-color-white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  &.round {
+    border-radius: 34px;
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
+input:checked + .slider {
+  background-color: $app-interactive-color-focus;
+  &:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px $app-interactive-color-focus;
+}
+
+.app-btn-alert{
+  margin-top: -5px;
+}
+
+.app-infrastructure-btn-width {
+  min-width: 120px;
+}
+
+.ui-inputswitch{
+  width: 40px;
+  height: 20px;
+}
+
+.ui-inputswitch-slider:before{
+  height: 14px;
+  width: 14px;
+}
+
+.ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-slider {
+  background-color: $app-color-blue-39;
+}
+
+.ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider{
+  background-color: $app-color-blue-39;
+}
+.ui-inputswitch-checked .ui-inputswitch-slider:before{
+  transform: translateX(20px);
+}

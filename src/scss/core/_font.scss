@@ -1,0 +1,25 @@
+.fp {
+  &-font-theme {
+    color: $app-brand-color;
+  }
+  &-warning {
+    color: $app-feedback-color-warning-primary;
+  }
+  &-disabled-text {
+    color: $app-text-color-disabled-on-light;
+  }
+  &-error-text {
+    color: $app-feedback-color-error-primary;
+  }
+  &-success-text {
+    color: $app-feedback-color-success-primary;
+  }
+}
+
+.app-font-size-md {
+  font-size: $app-font-size-md;
+}
+
+.app-small-font{
+  font-size: 13px;
+}

@@ -1,0 +1,129 @@
+.app-form-field-error {
+  background: none;
+  color: $app-color-red-49;
+  display: block;
+  font-size: $app-font-size-sm;
+  padding: 0.25em;
+}
+
+// Input range related class
+$track-radius: 3px;
+$contrast: 5%;
+$thumb-height: 30px;
+$thumb-width: 30px;
+$track-width: 150px;
+$track-height: 12px;
+$track-shadow-size: 2px;
+$track-shadow-blur: 2px;
+$track-border-width: 0;
+$track-border-color: $app-color-black;
+$app-color-white: $app-color-white;
+$track-shadow-color: $app-color-neutral-76;
+
+@mixin shadow ($shadow-size,$shadow-blur,$shadow-color) {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6) inset;
+}
+
+@mixin track() {
+  width: $track-width;
+  height: $track-height;
+  cursor: pointer;
+  animate: 0.2s;
+}
+
+@mixin thumb() {
+  background: $app-brand-color;
+  border-radius: 50%;
+  height: 16px !important;
+  width: 16px !important;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type=range] {
+  &.app-input-range-vertical {
+    -webkit-appearance: none;
+    margin: $thumb-height/2 0;
+    transform: rotate(-90deg);
+    margin: 0;
+    width: 150px;
+    display: block;
+    right: 54px;
+    position: relative;
+    bottom: 70px;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-ms-fill-lower {
+      background: $track-shadow-color;
+      border-radius: 10px;
+    }
+    &::-ms-fill-upper {
+      background: $app-color-white;
+      border-radius: 10px;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track();
+      @include shadow($track-shadow-size,$track-shadow-blur,$track-shadow-color);
+      background: $app-color-white;
+      border-radius: $track-radius;
+      border: $track-border-width solid $track-border-color;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb();
+      -webkit-appearance: none;
+      margin-top: -2px;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      background: lighten($app-color-white, $contrast);
+    }
+
+    &::-moz-range-track {
+      @include track();
+      @include shadow($track-shadow-size,$track-shadow-blur,$track-shadow-color);
+      background: $app-color-white;
+      border-radius: $track-radius;
+       border: $track-border-width solid $track-border-color;
+    }
+    &::-moz-range-thumb {
+      @include thumb();
+    }
+
+    &::-ms-track {
+      @include track();
+      background: transparent;
+      border-color: transparent;
+      border-width: $thumb-width 0;
+      color: transparent;
+    }
+
+    &::-ms-fill-lower {
+      background: darken($app-color-white, $contrast);
+      border: $track-border-width solid $track-border-color;
+      border-radius: $track-radius*2;
+      @include shadow($track-shadow-size,$track-shadow-blur,$track-shadow-color);
+    }
+    &::-ms-fill-upper {
+      background: $app-color-white;
+      border: $track-border-width solid $track-border-color;
+      border-radius: $track-radius*2;
+      @include shadow($track-shadow-size,$track-shadow-blur,$track-shadow-color);
+    }
+    &::-ms-thumb {
+      @include thumb();
+    }
+    &:focus::-ms-fill-lower {
+      background: $app-color-white;
+    }
+    &:focus::-ms-fill-upper {
+      background: lighten($app-color-white, $contrast);
+    }
+  }
+
+}

@@ -1,0 +1,107 @@
+.app-panel-card {
+  &.ui-panel.ui-widget {
+    margin: 2px 5px 10px;
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+  }
+}
+
+.app-generalInfo {
+  padding: 0;
+  margin: 0;
+  border-top: 0;
+
+  li {
+    border-bottom: 1px solid $app-color-neutral-84;
+
+    > strong {
+      display: inline-block;
+      width: 165px;
+      margin-right: 50px;
+      color: $app-background-color-dark-blue ;
+    }
+
+    > span {
+      color: $app-background-color-dark;
+    }
+  }
+}
+
+// Reports landing & Share CI - Chips CSS
+.app-prime-chip {
+  &.ui-chips > ul.ui-inputtext {
+    padding: $app-space-xxs $app-space-xs;
+    background-color: $app-background-color-light;
+    max-height: 100px;
+    overflow: auto;
+    overflow-x: hidden;
+
+    .ui-state-highlight {
+      padding: 2px 8px;
+      background: $app-brand-color;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    li {
+      &.ui-chips-input-token,
+      & > input {
+        width: 100%;
+      }
+    }
+  }
+
+  .ui-chips-token-icon:after {
+    content: '';
+    position: relative;
+    top: -14px;
+    right: 1px;
+    height: 17px;
+    width: 17px;
+    display: block;
+    border-radius: 50%;
+    background-color: rgba(255,255,255, 0.5);
+  }
+}
+
+.ui-tabview {
+  &.ui-tabview-top > .ui-tabview-nav {
+    padding: 0;
+  }
+
+  .ui-tabview-panel {
+    padding: 0;
+  }
+}
+
+// Override primeNg panel styling for all detail pages
+p-panel[collapseicon] {
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .ui-panel {
+    .ui-panel-titlebar {
+      position: relative;
+
+      .ui-panel-titlebar-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        text-align: right;
+        background: transparent;
+
+        &:hover {
+          background: transparent;
+        }
+
+        span {
+          top: 14px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+.app-bold,
+strong {
+  text-shadow: 0.5px 0 $app-background-color-dark;
+  font-weight: normal;
+}
+.app-border-none {
+  border: none;
+}
+.app-background-none {
+  background: transparent;
+}
+.app-background-white {
+  background: $app-background-color-white;
+}
+.app-cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+  &-default{
+    cursor: default;
+  }
+  &-none {
+    pointer-events: none;
+  }
+}
+
+a {
+  color: $app-brand-color;
+  &:not([href]):not([tabindex]) {
+    &.app-underline {
+      text-decoration: underline;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.fp {
+  &-ui-row {
+    margin: 0 -8px;
+  }
+}
+
+.ui-panel {
+  .ui-panel-titlebar {
+    background: $app-text-color-primary-on-dark;
+    color: $app-background-color-dark ;
+    border: none;
+    border-bottom: $csa-primary-border;
+    padding: 10px 8px;
+    font-size: $app-font-size-sm;
+  }
+
+  .ui-panel-content {
+    padding: 0.5em;
+  }
+}
+
+.app-pre {
+  white-space: pre;
+}
+
+.ui-widget input {
+  font-size: $app-font-size-sm;
+  height: 30px;
+}
+
+.ui-panel-content-wrapper {
+  font-size: $app-font-size-sm;
+}
+
+.app-alertmsgtopbar.alert {
+  padding-bottom: 0;
+  margin: 10px 10px 0 10px;
+}
+
+.app-required {
+  &:after {
+    content: '*';
+    position: absolute;
+    color: $app-feedback-color-error-primary;
+  }
+}
+.ui-dialog.ui-widget .ui-dialog-titlebar {
+  padding: 10px 1.5em;
+}
+.ui-dialog-footer {
+  padding: 10px;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+  padding: 0;
+}
+
+// Generic UI for primeng dropdown
+.app-ui-dropdown {
+  &.ui-dropdown {
+    border-radius: 0;
+    background: $app-text-color-primary-on-dark;
+
+    &:not(.ui-state-disabled):hover {
+      background-color: $app-text-color-primary-on-dark ;
+    }
+
+    .ui-dropdown-trigger {
+      border-left: 0;
+      padding: 0;
+
+      .ui-clickable {
+        margin-top: -8px;
+      }
+    }
+  }
+
+  .ui-dropdown-label {
+    padding: 8px 15px;
+  }
+
+  &.ui-dropdown.ui-state-focus {
+    box-shadow: none;
+    background-color: $app-text-color-primary-on-dark ;
+  }
+}
+
+.app-capitalize::first-letter {
+  text-transform: capitalize;
+}
+
+.app-details-border {
+  border: $app-border-component-on-light;
+}
+
+.app-highlight {
+  &-header {
+    text-align: left;
+  }
+
+  &-title {
+    margin: 0 auto;
+    height: 35px;
+    padding: 5px;
+    background-color: $app-background-color-white;
+    color: $app-color-neutral-27;
+    font-size: $app-font-size-sm;
+  }
+}
+
+.ui-widget-content {
+  .app-redirect-ci.app-font-theme {
+    color: $app-brand-color;
+  }
+}
+
+.ui-widget-content a.app-link {
+  color: $app-brand-color;
+  &.app-underline {
+    text-decoration: underline;
+    color: $app-brand-color;
+  }
+  &:hover {
+    text-decoration: underline;
+    color: $app-brand-color;
+  }
+}
+
+.ui-widget-content a.app-redirect-link, .app-redirect-link {
+  color: $app-brand-color;
+  &:hover {
+    text-decoration: underline;
+    color: $app-brand-color;
+  }
+}
+
+.app-z-index{
+  z-index: 9999;
+}

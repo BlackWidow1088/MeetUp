@@ -1,0 +1,88 @@
+// donut css
+.app-charts {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.app-donut-title {
+  text-align: center;
+  font-size: 14px;
+}
+
+.app-ci-donut-chart {
+  width: 21%;
+  margin: 0 2%;
+}
+
+.app-donut-checkbox {
+  display: inline;
+  margin: 0 10px;
+
+  &-status {
+    position: absolute;
+    opacity: 0;
+    margin-bottom: 20px;
+
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    // Box.
+    & + label:before {
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 1px;
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: $app-color-white;
+    }
+
+    // Disabled state label.
+    &:disabled + label {
+      color: $app-color-neutral-84;
+      cursor: auto;
+    }
+
+    // Disabled box.
+    &:disabled + label:before {
+      box-shadow: none;
+      background: $app-color-neutral-84;
+    }
+
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      background: $app-color-white;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 $app-color-white, 4px 0 0 $app-color-white, 4px -2px 0 $app-color-white, 4px -4px 0 $app-color-white,
+        4px -6px 0 $app-color-white, 4px -8px 0 $app-color-white;
+      transform: rotate(45deg);
+    }
+
+    // Checkbox box colors
+    &.app-check-pass {
+      &:checked + label:before {
+        background: $app-feedback-color-success-chart;
+      }
+    }
+    &.app-check-fail {
+      &:checked + label:before {
+        background: $app-feedback-color-error-chart;
+      }
+    }
+    &.app-check-warning{
+      &:checked + label:before {
+        background: $app-feedback-color-warning-chart;
+      }
+    }
+  }
+}

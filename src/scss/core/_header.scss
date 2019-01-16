@@ -1,0 +1,35 @@
+//....Header SCSS start....//
+.app-secondary-menu {
+    display: flex;
+    float: right;
+}
+a,
+button {
+  cursor: pointer;
+}
+
+.app-page-title {
+  font-size: 21px;
+  color: $app-text-color-primary-on-light;
+}
+
+.app-right-img {
+    cursor: pointer;
+    width: 40px;
+    text-align: center;
+    padding: 6px 5px;
+    height: 35px;
+    display: inline-block;
+
+    &:hover {
+      color: $app-text-color-primary-on-dark;
+      background-color: $app-background-color-dark-blue;
+    }
+    &:focus {
+      outline: none;
+      color: $app-text-color-primary-on-dark;
+      background-color: $app-background-color-dark-blue;
+    }
+}
+
+//....Header SCSS end....//

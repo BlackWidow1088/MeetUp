@@ -1,0 +1,400 @@
+.ui-sortable-column-icon {
+  float: right;
+  padding: 3px 0;
+}
+
+p-multiselect .ui-multiselect .ui-multiselect-trigger .fa {
+  margin-top: -3px;
+}
+// Table CSS
+
+// This changes the filter color when the filter is active
+.app-prime-table,
+.app-prime-custom {
+  p-multiselect .ui-multiselect .ui-multiselect-trigger {
+    top: -12px;
+  }
+
+	p-multiselect .ui-multiselect.app-multiselect-active .ui-multiselect-trigger .ui-clickable:before {
+		color: $app-interactive-color-focus;
+	}
+}
+
+.app-prime-table
+  p-multiselect
+  .ui-multiselect
+  .ui-multiselect-trigger
+  .ui-clickable:before {
+    content: '\e94c';
+    font-size: 18px;
+    color: $app-text-color-primary-on-light;
+}
+
+p-multiselect,
+.ui-multiselect-panel {
+  font-size: $app-font-size-sm;
+}
+
+p-multiselect .ui-multiselect-panel .ui-multiselect-item {
+  font-weight: 500;
+  label {
+    margin-bottom: 2px;
+  }
+}
+
+p-multiselect .ui-multiselect .ui-multiselect-label {
+  margin-bottom: 0;
+  color: $app-text-color-primary-on-light;
+  padding-left: .5em;
+}
+
+.ui-multiselect-items-wrapper {
+  .ui-state-highlight {
+    background: rgba(0, 0, 0, 0);
+    color: #222222;
+    &:hover {
+      border-color: #c0c0c0;
+      background-color: #eeeeee;
+      color: #212121;
+    }
+  }
+}
+
+.ui-chkbox .ui-chkbox-box {
+  margin-right: 2px;
+}
+
+.ui-multiselect-header {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid hsla(0, 0%, 84%, 0.8);
+  border-radius: 0;
+  padding-bottom: 6px;
+  .ui-multiselect-filter-container {
+    width: 75%;
+    .ui-multiselect-filter-icon {
+      top: 9px;
+      left: 87%;
+    }
+  }
+
+  .ui-inputtext {
+    padding: 3.5px 24px 3.5px 3.5px;
+  }
+
+  .ui-multiselect-close {
+    top: 10px;
+  }
+}
+
+.app-prime-table {
+  .ui-multiselect .ui-multiselect-trigger .ui-multiselect-trigger-icon {
+    margin-top: 0;
+  }
+
+  &.ui-datatable {
+    font-size: $app-font-size-sm;
+
+    .ui-datatable-tablewrapper,
+    .ui-datatable-scrollable-wrapper {
+      overflow: auto;
+      border: $csa-primary-border;
+    }
+
+    .ui-row-toggler {
+      color: $app-background-color-dark-blue;
+    }
+
+    .ui-datatable-thead > tr > th {
+      text-align: left;
+      height: 45px;
+      letter-spacing: $csa-letter-spacing-half;
+      background: $app-background-color-light;
+      color: $app-text-color-primary-on-light;
+      border-bottom: $csa-primary-border;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      &:not(:last-child) {
+        border-right: $csa-primary-border;
+      }
+    }
+
+    .ui-datatable-data {
+      border-width: 0;
+    }
+
+    // Override primeng table border colors
+    .ui-datatable-data > tr {
+      &.ui-widget-content,
+      &.ui-expanded-row-content {
+        border-width: 0;
+      }
+
+      &.ui-state-highlight {
+        background-color: $app-color-neutral-84;
+        color: $app-text-color-primary-on-light;
+
+        &:hover {
+          background-color: $app-color-neutral-84;
+          color: $app-text-color-primary-on-light;
+        }
+      }
+
+      > td {
+        padding: 8px 0.5em;
+        border: none;
+        word-wrap: break-word; // Using this, as few columns have continuous strings, they dont break and thus overlaps the adjacent word.
+
+        &.app-border {
+          $border-prop: 3px solid;
+
+          &-fail-left {
+            border-left: $border-prop $color-failure;
+          }
+          &-pass-left {
+            border-left: $border-prop $color-success;
+          }
+          &-warning-left {
+            border-left: $border-prop $color-warning;
+          }
+        }
+        // For expanded container add border
+        .app-border {
+          $border-prop: 1px solid;
+
+          &-fail {
+            border: $border-prop $color-failure;
+          }
+          &-pass {
+            border: $border-prop $color-success;
+          }
+          &-warning {
+            border: $border-prop $color-warning;
+          }
+        }
+      }
+    }
+
+    .app-fixed-checkbox {
+      width: 38px;
+    }
+  }
+
+  .ui-multiselect-label-container {
+    display: none;
+  }
+
+  p-multiselect {
+    float: right;
+    margin-top: 7px;
+  }
+}
+
+.ui-paginator {
+  background: transparent;
+  border: 0;
+  padding: 5px 10px;
+  font-size:18px;
+  text-align: end;
+
+  a {
+    background: transparent;
+    border: none;
+  }
+  .ui-paginator-page.ui-state-active{
+    background: $app-brand-color;
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  .ui-paginator-page.ui-state-default{
+    font-size: 14px;
+    margin-top: 3px;
+  }
+}
+// Pagination UI related css
+p-paginator {
+  display: inline-block;
+  width: 100%;
+  background-color: $app-background-color-light;
+  border: $csa-primary-border;
+  border-top: 0;
+}
+
+.app-partner-table {
+  &-col {
+    width: 180px;
+  }
+  &-col-lg {
+    width: 270px;
+  }
+
+  &-search {
+    height: 40px;
+    padding: 5px;
+  }
+  &-col-sm {
+    width: 265px;
+  }
+
+  .ui-datatable-header.ui-widget-header {
+    padding: 0;
+  }
+}
+
+.app-widget-header {
+  text-align: right;
+  padding: 0 0 4px 0;
+  border-bottom: 0 none;
+}
+
+.app-global-search {
+	position: relative;
+  display: inline-block;
+
+	.app-searchicon {
+		color: #125B87;
+		position: absolute;
+		top: 7px;
+		right: 7px;
+  }
+
+	input {
+    padding: 5px 25px 5px 5px;
+
+    &.app-fixed-width {
+      width: 400px;
+    }
+  }
+}
+
+.ui-tooltip .ui-tooltip-text {
+  background: #333333;
+  font-size: 13px;
+  padding: 8px 10px;
+}
+
+.ui-tooltip-right .ui-tooltip-arrow {
+  border-right-color: #333333;
+}
+
+.app-table-ruletitle
+  > .ui-column-filter.ui-inputtext.ui-widget.ui-state-default.ui-corner-all {
+  float: right;
+  width: 70%;
+  margin-top: 0px;
+}
+
+.ui-dropdown-item.ui-state-highlight {
+  background: $app-brand-color;
+}
+
+.app-landing-search {
+  font-size: 13px;
+}
+
+.app-expansion-label {
+  font-size: $app-font-size-sm;
+  color: $app-background-color-dark-blue;
+}
+
+.app-genTableHeader {
+  padding: 10px;
+}
+
+.app-table-ruletitle {
+  width: 220px;
+}
+
+.app-rule-counters {
+  position: relative;
+  bottom: 0;
+  width: 150px;
+  padding-left: $app-space-xs;
+  color: $app-text-color-primary-on-light;
+  letter-spacing: $csa-letter-spacing-half;
+
+  &.app-has-pagination {
+    position: absolute;
+    bottom: 7px;
+    &-lg {
+      position: absolute;
+      bottom: 25px;
+    }
+  }
+}
+
+.app-rules-summary-multiselect {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.app-column-expander {
+  &-sm {
+    width: 30px;
+  }
+  &-lg {
+    width: 40px;
+  }
+}
+
+.app-reload-col {
+  width : 83px;
+  text-align: center;
+}
+
+.app-agent-status {
+  &-col {
+    width: 260px;
+  }
+  &-img {
+    width: 25px;
+    margin: 0 10px;
+  }
+}
+
+.app-email-col {
+  width: 260px;
+}
+
+.app-action-col {
+  width: 220px;
+  text-align: center;
+}
+.app-snapshot-col {
+  text-align: center;
+}
+
+.app-device-table {
+  min-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-row-to-delete > td {
+  text-decoration: line-through;
+  text-decoration-color: $app-color-black;
+}
+
+.app-disable-checkbox {
+  .app-fixed-checkbox {
+    .ui-chkbox {
+      visibility: hidden;
+    }
+  }
+}
+
+th.app-fixed-checkbox.app-show-hide-checkbox {
+  .ui-chkbox {
+    visibility: hidden;
+  }
+}
+
+.app-new-device-cell {
+  background-color : $app-feedback-color-information-background;
+  float: right;
+  font-size: $app-space-sm;
+  padding-left: $app-space-xxs;
+  padding-right: $app-space-xxs;
+}
