@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Data-Center-Advisor": {
+    "meetup-gui": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Data-Center-Advisor",
+            "outputPath": "dist/meetup-gui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Data-Center-Advisor:build"
+            "browserTarget": "meetup-gui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Data-Center-Advisor:build:production"
+              "browserTarget": "meetup-gui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Data-Center-Advisor:build"
+            "browserTarget": "meetup-gui:build"
           }
         },
         "test": {
@@ -117,7 +117,7 @@
         }
       }
     },
-    "Data-Center-Advisor-e2e": {
+    "meetup-gui-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -125,11 +125,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Data-Center-Advisor:serve"
+            "devServerTarget": "meetup-gui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Data-Center-Advisor:serve:production"
+              "devServerTarget": "meetup-gui:serve:production"
             }
           }
         },
@@ -145,5 +145,5 @@
       }
     }
   },
-  "defaultProject": "Data-Center-Advisor"
+  "defaultProject": "meetup-gui"
 }

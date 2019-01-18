@@ -20,6 +20,7 @@ import { SliderModule } from 'primeng/slider';
 import { TooltipModule } from 'primeng/tooltip';
 import {TableModule} from 'primeng/table';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
+import { TableComponent } from './table/table.component';
 
 // module type: Shared Module
 // exports: declarations, no providers recommended
@@ -39,7 +40,8 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
   declarations: [
     NotfoundComponent,
     UploadDialogComponent,
-    EllipsisPipe
+    EllipsisPipe,
+    TableComponent
   ],
   exports: [
     CommonModule,

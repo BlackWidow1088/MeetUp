@@ -1,4 +1,4 @@
-# Data-Center-Advisor
+# meetup-gui
 
 Web application boilerplate which manages the data center operations.
 

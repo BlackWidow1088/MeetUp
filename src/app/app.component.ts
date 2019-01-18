@@ -7,7 +7,7 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Data-Center-Advisor';
+  title = 'meetup-gui';
   ngOnInit(): void {
     if (this.swUpdate.isEnabled) {
       console.log('Service Worker is available');

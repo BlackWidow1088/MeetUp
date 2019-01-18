@@ -36,7 +36,7 @@ webpush.setVapidDetails(
 app.use(bodyParser.json());
 app.use(express.static('dist'));
 app.use(express.static('server'));
-app.use('/', express.static('dist/Data-Center-Advisor'));
+app.use('/', express.static('dist/meetup-gui'));
 app.use(busboy());
 app.route('/api/lessons')
   .get(tokenMiddleware.checkToken, readAllLessons);

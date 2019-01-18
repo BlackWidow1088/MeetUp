@@ -1,6 +1,6 @@
 {
-  "name": "Data-Center-Advisor",
-  "short_name": "Data-Center-Advisor",
+  "name": "meetup-gui",
+  "short_name": "meetup-gui",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -1,5 +1,5 @@
 {
-  "name": "Data-Center-Advisor",
+  "name": "meetup-gui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,8 +12,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev-worker": "ng run Data-Center-Advisor:build-worker --watch=true",
-    "build-worker": "ng run Data-Center-Advisor:build-worker --source-map=false"
+    "dev-worker": "ng run meetup-gui:build-worker --watch=true",
+    "build-worker": "ng run meetup-gui:build-worker --source-map=false"
   },
   "private": true,
   "dependencies": {
