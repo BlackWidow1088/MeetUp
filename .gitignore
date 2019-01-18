@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/meetup-gui-build
 /tmp
 /out-tsc
 /meetup-gui/dist
@@ -11,6 +12,8 @@
 # dependencies
 /node_modules
 /meetup-gui/node_modules
+/meetup-app/node_modules
+/meetup-proxy/node_modules
 
 # IDEs and editors
 /.idea
