@@ -18,6 +18,7 @@ import {DialogModule} from 'primeng/dialog';
 import {CheckboxModule} from 'primeng/checkbox';
 import { SliderModule } from 'primeng/slider';
 import { TooltipModule } from 'primeng/tooltip';
+import {TableModule} from 'primeng/table';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 // module type: Shared Module
@@ -32,7 +33,8 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
     AccordionModule,
     CheckboxModule,
     SliderModule,
-    TooltipModule
+    TooltipModule,
+    TableModule
   ],
   declarations: [
     NotfoundComponent,
@@ -51,7 +53,8 @@ import { EllipsisPipe } from './pipes/ellipsis.pipe';
     AccordionModule,
     CheckboxModule,
     SliderModule,
-    TooltipModule
+    TooltipModule,
+    TableModule
   ]
 })
 export class SharedModule { }
