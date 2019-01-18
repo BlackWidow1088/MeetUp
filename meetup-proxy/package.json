@@ -1,0 +1,13 @@
+{
+    "name": "meetup-proxy",
+    "version": "0.0.0",
+    "scripts": {
+        "proxy-server": "nodemon dev-proxy-server.js"
+    },
+    "private": true,
+    "dependencies": {
+        "nodemon": "^1.18.9",
+        "http-server": "^0.11.1"
+    },
+    "devDependencies": {}
+}

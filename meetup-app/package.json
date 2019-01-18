@@ -1,0 +1,22 @@
+{
+  "name": "meetup-app",
+  "version": "0.0.0",
+  "scripts": {
+    "app-server": "nodemon server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "command-line-args": "^5.0.2",
+    "connect-busboy": "0.0.2",
+    "cookie-parser": "^1.4.3",
+    "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.4.0",
+    "nodemon": "^1.18.9",
+    "web-push": "^3.3.3"
+  },
+  "devDependencies": {}
+}

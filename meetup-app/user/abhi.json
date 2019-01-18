@@ -1,0 +1,469 @@
+{
+    "class_id": "d50ba9de-2e0f-49c5-8e42-26a248e2a41f",
+    "id": null,
+    "_meta": {
+      "class": "ISMDeviceSnapshot",
+      "flags": []
+    },
+    "device_identifier": null,
+    "device_uuid": null,
+    "timestamp": "2019-01-09T06:32:22Z",
+    "display_name": null,
+    "engine_revision": 0,
+    "target_class_id": null,
+    "engine_version": null,
+    "children": [
+      {
+        "class_id": "d2537e47-94a8-4ec4-97b9-3017f1396e37",
+        "id": null,
+        "_meta": {
+          "class": "APIOutput",
+          "flags": []
+        },
+        "api": "https://10.61.185.102:25566/ism/api/v2/nodes/",
+        "output": {
+          "field_id": "36616951-7443-4f52-b243-5e5e2d2412e2",
+          "size": 6524,
+          "content_type": "application/octet-stream",
+          "compressed": true,
+          "contents": "H4sIAHqVNVwC/92YW2/iOBSA/wrKcxNs52InbwwUFm2hLNAOO6PRKA1uyTYkWTvpTLfqf18nptwaIGGHFSpVkZqeq/Pp+JzzovQo5+4D7Yb3keJ8/XahjLwZnbvj55gqjjJLkpg79ToEmgU1SEwNAuQg07Ssus/ndZ4L159QvR9NKZffaudyrF6niQbED9T+4lGoXChdPv8UTZ8V50XJpYS3F6Xt3jHfk44HLqNhIp90p4oTpkFwodzEUzehLfErwkEA2iqAKiBjYDk6diASQcEvwnxz5gfTzPCVz5Pc9iiIkn46fzO0yIgnERP5qiETSpl85goCqMNXEUM3bkynTByJkFzlTICQ3TI3StwkzcT6EZu7gRBoUe4xP058ka54TJNGHNca7XatoYPMQCNw2XypdslYlIWwCMsLUp5Qtgqrw6I0zmIj8u+x+7DILA/zljIuHd0aQmMwTQcR96VvGaB4AQFdyN+E/t/yDStQJUAF4gOh0Ou5fpjQ0A092hNO1tPpu/M8MF+cVZaBeg8RtNRM6zO9u2FBIR4E1DfPFSHhngVcBpI5CZan05RJK2/v/k1NJjB0vUcZ9IuynVz+v6Xkteel8fPI/4fKJ6+ZozRM5NnKJ/+VNeJkSRJSxNpucMgecG7CxzD6Eb4jZ3w9rMGaWrttTSxsHCSH//ATb3ZiapqDK51A0AeoXZqauyz6jBrdXmNGulkHRC8C5NNQXeVfng7dXrGBNsGAJ6ICa8Ayq1FhH0kFOlsqfq9ORZ7DbiqMX0iFAU5PBVGBrSI8BtgxTQdhDRN04F7SV2+LsidR/GPmzyl7ePZ+btVQksW01DNK69kberC0nrWhh0rr4a07dMH2DtQ/uyz0w4dt1KXU/tty5nLu84p4S8Pl8f65+pTG+745MQDoGfltqe8l3CwifDDs9i6HnT9ruZ1az6gEOtR3go5OUf6wYxgawFal8ofN9fIHD7dSo5y6GjxY83bQearyN5hMJqKRsi2jCh7ItJZ8vO+mNpopbG43U9YBZjLjRdAseDuvlkpUSqgZxK5GD16nB5WmRz9XemzzaHr0/fTgbXrwR6KHOABqZtXaY63Tox++jN7wQeeJj3gv9tH4oP34WNv4kI+FD9RFjtU6d7wxzxnl8THOFB+oo6PxMfbjQ7bxsT8SPna2DkBGNXxscMTg1+v0xqu5b3weg98fHTH4kSvQmlQb/Mb5PoDs64t18Cv3AeT/3QfgDAsCjSobySnznygNvSDiKStYTKJKQ1VxF1Ripnq3GD3VWAUQxACL1gfZ1veq68imnPzWbeyFCRbB1Gi31cVS9n2pQTuHq90s6SdiCWqWAQ6XmBMRsQvMU4Ex+q3daUEMxeALgYWP5eF7y+ePoxkN7oUZuJeOwt10a4SQoUJUREfGUzEdCFYavb+9vv4Ln/AydnwZAAA=",
+          "compressed_size": 1073
+        },
+        "method": "GET",
+        "children": []
+      },
+      {
+        "class_id": "d2537e47-94a8-4ec4-97b9-3017f1396e37",
+        "id": null,
+        "_meta": {
+          "class": "APIOutput",
+          "flags": []
+        },
+        "api": "https://10.61.185.102:25566/ism/api/v2/nodes/inventory",
+        "output": {
+          "field_id": "36616951-7443-4f52-b243-5e5e2d2412e2",
+          "size": 154922,
+          "content_type": "application/octet-stream",
+          "compressed": true,
+          "contents": "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",
+          "compressed_size": 8299
+        },
+        "method": "GET",
+        "children": []
+      },
+      {
+        "class_id": "7db57e78-68fd-4bea-b99c-11b097fe8bde",
+        "id": null,
+        "_meta": {
+          "class": "ISM",
+          "flags": []
+        },
+        "name": null,
+        "model": null,
+        "serial": null,
+        "uptime": null,
+        "children": [
+          {
+            "class_id": "2e259153-c8c6-44f2-9823-0034e626b0c2",
+            "id": null,
+            "_meta": {
+              "class": "ISMChassis",
+              "flags": []
+            },
+            "name": "cie-fCX400M4-f1213",
+            "chassis_id": null,
+            "node_id": 10125,
+            "children": [
+              {
+                "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                "id": null,
+                "_meta": {
+                  "class": "BaseInfo",
+                  "flags": []
+                },
+                "model_number": "PRIMERGY CX400 M4",
+                "serial_number": null,
+                "part_number": null,
+                "status": "Warning",
+                "manufacturer": null,
+                "description": null,
+                "children": []
+              },
+              {
+                "class_id": "e6c0ec70-faa0-11e5-848a-685b35b6908b",
+                "id": null,
+                "_meta": {
+                  "class": "Compute",
+                  "flags": []
+                },
+                "name": "cie-fCX2560M4-f1213-1",
+                "location": "slot-1",
+                "uuid": null,
+                "original_uuid": null,
+                "virtual": false,
+                "host_type": null,
+                "mgmt_ip": "10.61.185.75",
+                "node_id": 10126,
+                "children": [
+                  {
+                    "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "BaseInfo",
+                      "flags": []
+                    },
+                    "model_number": "PRIMERGY CX2560 M4",
+                    "serial_number": null,
+                    "part_number": null,
+                    "status": null,
+                    "manufacturer": null,
+                    "description": null,
+                    "children": []
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "class_id": "e6c0ec70-faa0-11e5-848a-685b35b6908b",
+                "id": null,
+                "_meta": {
+                  "class": "Compute",
+                  "flags": []
+                },
+                "name": "cie-fCX2560M4-f1213-3",
+                "location": "slot-2",
+                "uuid": null,
+                "original_uuid": null,
+                "virtual": false,
+                "host_type": null,
+                "mgmt_ip": "10.61.185.77",
+                "node_id": 10127,
+                "children": [
+                  {
+                    "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "BaseInfo",
+                      "flags": []
+                    },
+                    "model_number": "PRIMERGY CX2560 M4",
+                    "serial_number": null,
+                    "part_number": null,
+                    "status": null,
+                    "manufacturer": null,
+                    "description": null,
+                    "children": []
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "class_id": "e6c0ec70-faa0-11e5-848a-685b35b6908b",
+                "id": null,
+                "_meta": {
+                  "class": "Compute",
+                  "flags": []
+                },
+                "name": "cie-fCX2560M4-f1213-2",
+                "location": "slot-3",
+                "uuid": null,
+                "original_uuid": null,
+                "virtual": false,
+                "host_type": null,
+                "mgmt_ip": "10.61.185.76",
+                "node_id": 10128,
+                "children": [
+                  {
+                    "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "BaseInfo",
+                      "flags": []
+                    },
+                    "model_number": "PRIMERGY CX2560 M4",
+                    "serial_number": null,
+                    "part_number": null,
+                    "status": null,
+                    "manufacturer": null,
+                    "description": null,
+                    "children": []
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "class_id": "e6c0ec70-faa0-11e5-848a-685b35b6908b",
+                "id": null,
+                "_meta": {
+                  "class": "Compute",
+                  "flags": []
+                },
+                "name": "cie-fCX2560M4-f1213-4",
+                "location": "slot-4",
+                "uuid": null,
+                "original_uuid": null,
+                "virtual": false,
+                "host_type": null,
+                "mgmt_ip": "10.61.185.78",
+                "node_id": 10129,
+                "children": [
+                  {
+                    "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "BaseInfo",
+                      "flags": []
+                    },
+                    "model_number": "PRIMERGY CX2560 M4",
+                    "serial_number": null,
+                    "part_number": null,
+                    "status": null,
+                    "manufacturer": null,
+                    "description": null,
+                    "children": []
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "class_id": "0d71b048-faa6-11e5-8a05-685b35b6908b",
+                    "id": null,
+                    "_meta": {
+                      "class": "Processor",
+                      "flags": []
+                    },
+                    "processor_id": null,
+                    "architecture": null,
+                    "core_count": 18,
+                    "core_speed": 2300,
+                    "socket": null,
+                    "children": [
+                      {
+                        "class_id": "0af7a22c-faa7-11e5-95b2-685b35b6908b",
+                        "id": null,
+                        "_meta": {
+                          "class": "BaseInfo",
+                          "flags": []
+                        },
+                        "model_number": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+                        "serial_number": null,
+                        "part_number": null,
+                        "status": null,
+                        "manufacturer": null,
+                        "description": null,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,17 @@
+{
+  "name": "meetup",
+  "version": "0.0.0",
+  "scripts": {
+    "gui-server-dev": "pushd meetup-gui && npm run dev && popd",
+    "gui-server-prod": "pushd meetup-gui && npm run prod && popd",
+    "app-server": "pushd meetup-app && npm run app-server && popd",
+    "proxy-server": "pushd meetup-proxy && npm run proxy-server && popd",
+    "dev": "concurrently --kill-others \"npm run gui-server-dev\" \"npm run app-server\" \"npm run proxy-server\"",
+    "prod": "npm run gui-server-prod && npm run app-server"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}

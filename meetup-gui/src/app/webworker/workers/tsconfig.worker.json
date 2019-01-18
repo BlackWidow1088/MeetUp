@@ -2,7 +2,7 @@
   "extends": "../../../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "src",
-    "outDir": "../../../../dist/out-tsc/worker",
+    "outDir": "../../../../../meetup-gui-build/out-tsc/worker",
     "typeRoots": []
   },
   "exclude": [

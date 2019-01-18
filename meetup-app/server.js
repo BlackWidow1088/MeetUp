@@ -7,7 +7,6 @@ const sendNewsletter = require('./send-newsletter.route');
 const tokenMiddleware = require('./checkToken.middleware');
 const systemDiagram = require('./system-diagram.js');
 const settings = require('./settings');
-const upload = require('./upload');
 const bodyParser = require('body-parser');
 const webpush = require('web-push');
 const cookieParser = require('cookie-parser');
@@ -18,8 +17,8 @@ const path = require('path');
 const busboy = require('connect-busboy');
 
 const TIMEOUT = 120;
-const RSA_PRIVATE_KEY = fs.readFileSync('./server/keys/private.key');
-// const RSA_PUBLIC_KEY = fs.readFileSync('./server/keys/public.key');
+const RSA_PRIVATE_KEY = fs.readFileSync('./keys/private.key');
+// const RSA_PUBLIC_KEY = fs.readFileSync('./keys/public.key');
 const vapidKeys = {
   "publicKey": "BEsG2x5tWdnlWiuziUTmNIKDhEdYmwJBqqg8xVoHuTwi3dnNhHhFiPC_RnqHjgx2xW_4im9ypuJz3gf_s1pGueE",
   "privateKey": "EKCIg0owHSSzLAb5Y9ZUQWw44uoJwwZM9K1hZqvajh4"
@@ -34,9 +33,9 @@ webpush.setVapidDetails(
 );
 
 app.use(bodyParser.json());
-app.use(express.static('dist'));
+app.use(express.static('../meetup-gui-build'));
 app.use(express.static('server'));
-app.use('/', express.static('dist/meetup-gui'));
+app.use('/', express.static('../meetup-gui-build/meetup-gui'));
 app.use(busboy());
 app.route('/api/lessons')
   .get(tokenMiddleware.checkToken, readAllLessons);
@@ -51,11 +50,9 @@ app.route('/api/login')
   .post(loginRoute);
 
 app.get('/api/download', (req,res) => {
-  res.download(path.join(process.cwd(), 'server', 'user', 'abhi.txt'));
+  res.download(path.join(process.cwd(), 'user', 'abhi.txt'));
 });
 
-// TODO: alternative for upload using formiddable
-// app.route('/api/upload').post(upload);
 app.post('/api/upload',function(req,res) {
   let fstream;
   let filedata;
