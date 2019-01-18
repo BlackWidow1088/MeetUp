@@ -4,9 +4,13 @@
 /dist
 /tmp
 /out-tsc
+/meetup-gui/dist
+/meetup-gui/tmp
+/meetup-gui/out-tsc
 
 # dependencies
 /node_modules
+/meetup-gui/node_modules
 
 # IDEs and editors
 /.idea
@@ -41,3 +45,5 @@ Thumbs.db
 # webworker files
 /src/assets/workers/*.js
 /src/assets/workers/*.js.map
+/meetup-gui/src/assets/workers/*.js
+/meetup-gui/src/assets/workers/*.js.map
