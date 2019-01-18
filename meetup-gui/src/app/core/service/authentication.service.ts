@@ -8,6 +8,7 @@ import * as isBefore from 'date-fns/is_before';
 import * as format from 'date-fns/format';
 import { Router } from '@angular/router';
 import { interval } from 'rxjs';
+import { URLLinks } from '../model';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class AuthenticationService {
     private apiBaseService: ApiBaseService, private router: Router) {
   }
   login(email: string, password: string) {
-    return this.apiBaseService.post('login', { email, password })
+    return this.apiBaseService.post(URLLinks.login, { email, password })
     .pipe(
       map(res => {
         this.setSession(res);
@@ -35,6 +36,7 @@ export class AuthenticationService {
   }
 
   logout(routeQueryParams) {
+    // TODO: logout from server
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
     this.router.navigate(['/app/login'], routeQueryParams);

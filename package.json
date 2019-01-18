@@ -4,10 +4,11 @@
   "scripts": {
     "gui-server-dev": "pushd meetup-gui && npm run dev && popd",
     "gui-server-prod": "pushd meetup-gui && npm run prod && popd",
+    "authentication-server": "pushd meetup-authentication && npm run auth-server && popd",
     "app-server": "pushd meetup-app && npm run app-server && popd",
     "proxy-server": "pushd meetup-proxy && npm run proxy-server && popd",
-    "dev": "concurrently --kill-others \"npm run gui-server-dev\" \"npm run app-server\" \"npm run proxy-server\"",
-    "prod": "npm run gui-server-prod && npm run app-server"
+    "dev": "concurrently --kill-others \"npm run gui-server-dev\" \"npm run app-server\" \"npm run authentication-server\" \"npm run proxy-server\"",
+    "prod": "npm run gui-server-prod && npm run app-server && npm run authentication-server"
   },
   "private": true,
   "dependencies": {},

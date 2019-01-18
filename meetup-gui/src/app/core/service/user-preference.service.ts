@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 
 import { ApiBaseService } from 'src/app/core/service/api-base.service';
 import { AuthenticationService } from 'src/app/core/service/authentication.service';
+import { URLLinks } from 'src/app/core/model';
 
 interface UserPreferenceComponent {
   componentPreference: string;
@@ -59,7 +60,7 @@ export class UserPreferenceService {
     const userId = '123';
     try {
       return this.apiBaseService.put(
-        `/settings/${userId}`,
+        `${URLLinks.saveUserpreference}/${userId}`,
         JSON.stringify(obj)
       ).pipe(map(response => {
         this.preferences = obj;
@@ -91,7 +92,7 @@ export class UserPreferenceService {
     const existingPreferenceData = existingData ? existingData : {};
     existingPreferenceData[componentName] = data;
     this.apiBaseService.put(
-      `/settings/${userId}`,
+      `${URLLinks.saveUserpreference}/${userId}`,
       JSON.stringify(existingPreferenceData)
     ).subscribe(res => {
       this.preferences = existingPreferenceData;

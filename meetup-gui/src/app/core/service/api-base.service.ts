@@ -10,25 +10,18 @@ import { StoreService } from 'src/app/store/service';
   providedIn: 'root'
 })
 export class ApiBaseService {
-  private authToken: any;
-
   constructor(
     private http: HttpClient,
     private errorService: CommonErrorService,
     private storeService: StoreService) {
     //  TODO: store service to store
-    this.authToken = localStorage.getItem('id_token');
-  }
-
-  private buildUrl(endPoint: string) {
-    const apiURL = '/api/';
-    return apiURL.concat(endPoint);
   }
 
   private getHeaders = () => {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Authorization', 'Bearer ' + this.authToken);
+    const authToken = localStorage.getItem('id_token');
+    headers = headers.set('Authorization', 'Bearer ' + authToken);
     return headers;
   };
 
@@ -41,8 +34,7 @@ export class ApiBaseService {
     }
   }
 
-  get(endPoint) {
-    const url = this.buildUrl(endPoint);
+  get(url) {
     return this.http.get(url, { headers: this.getHeaders() }).pipe(
       map((res: Response) => {
         return this.handleResponse(res);
@@ -52,8 +44,7 @@ export class ApiBaseService {
     );
   }
 
-  put(endPoint: string, jsonData) {
-    const url = this.buildUrl(endPoint);
+  put(url: string, jsonData) {
     return this.http.put(url, jsonData, { headers: this.getHeaders() }).pipe(map((res: Response) => {
       return this.handleResponse(res);
     })).pipe(catchError((error: Response) => {
@@ -61,15 +52,13 @@ export class ApiBaseService {
     }));
   }
 
-  post(endPoint: string, jsonData = {}) {
-    const url = this.buildUrl(endPoint);
+  post(url: string, jsonData = {}) {
     return this.http.post(url, jsonData, { headers: this.getHeaders() }).pipe(map((res: Response) => {
       return this.handleResponse(res);
     })).pipe(catchError((error: Response) => this.errorService.handleErrorResponse(error)));
   }
 
-  delete(endPoint) {
-    const url = this.buildUrl(endPoint);
+  delete(url) {
     return this.http.delete(url, { headers: this.getHeaders() }).pipe(map((res: Response) => {
       return this.handleResponse(res);
     })).pipe(catchError((error: Response) => throwError(error)));

@@ -16,6 +16,8 @@ var APP_URL = 'http://localhost:4200';
 var API_PATHS = ['/api'];
 var API_URL = 'http://localhost:9000';
 
+var AUTH_PATHS = ['/auth'];
+var AUTH_URL = 'http://localhost:9002';
 
 var proxy = httpProxy.createProxyServer({ changeOrigin: true });
 
@@ -28,6 +30,12 @@ var server = http.createServer(function (req, res) {
       break;
     }
   }
+  for (var i = 0; i < AUTH_PATHS.length; i++) {
+    if (req.url.startsWith(AUTH_PATHS[i])) {
+      target = AUTH_URL;
+      break;
+    }
+  }
   proxy.web(req, res, { target: target });
 
   proxy.on('error', function (e) {
@@ -36,5 +44,5 @@ var server = http.createServer(function (req, res) {
 
 });
 
-console.log('Proxy Server listening on port 5050');
-server.listen(5050);
+console.log('Proxy Server listening on port 5052');
+server.listen(5052);

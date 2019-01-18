@@ -17,8 +17,6 @@ const path = require('path');
 const busboy = require('connect-busboy');
 
 const TIMEOUT = 120;
-const RSA_PRIVATE_KEY = fs.readFileSync('./keys/private.key');
-// const RSA_PUBLIC_KEY = fs.readFileSync('./keys/public.key');
 const vapidKeys = {
   "publicKey": "BEsG2x5tWdnlWiuziUTmNIKDhEdYmwJBqqg8xVoHuTwi3dnNhHhFiPC_RnqHjgx2xW_4im9ypuJz3gf_s1pGueE",
   "privateKey": "EKCIg0owHSSzLAb5Y9ZUQWw44uoJwwZM9K1hZqvajh4"
@@ -34,7 +32,6 @@ webpush.setVapidDetails(
 
 app.use(bodyParser.json());
 app.use(express.static('../meetup-gui-build'));
-app.use(express.static('server'));
 app.use('/', express.static('../meetup-gui-build/meetup-gui'));
 app.use(busboy());
 app.route('/api/lessons')
@@ -45,9 +42,6 @@ app.route('/api/notifications')
 
 app.route('/api/newsletter')
   .post(sendNewsletter);
-
-app.route('/api/login')
-  .post(loginRoute);
 
 app.get('/api/download', (req,res) => {
   res.download(path.join(process.cwd(), 'user', 'abhi.txt'));
@@ -96,38 +90,6 @@ app.get(`/api/system/:systemid/diagram`, (req, res) => {
 app.get('/api/system/settings/:userid', (req, res) => {
   res.send(JSON.stringify(JSON.stringify(settings)));
 });
-
-function loginRoute(req, res) {
-  const email = req.body.email,
-    password = req.body.password;
-
-  if (validateEmailAndPassword({email, password})) {
-    const userId = findUserIdForEmail(email);
-
-    const jwtBearerToken = jwt.sign({}, RSA_PRIVATE_KEY, {
-      algorithm: 'RS256',
-      expiresIn: TIMEOUT,
-      subject: userId
-    });
-    res.status(200).json({
-      idToken: jwtBearerToken,
-      expiresIn: TIMEOUT
-    });
-  } else {
-    // send status 401 Unauthorized
-    res.sendStatus(401);
-  }
-}
-
-function findUserIdForEmail(email) {
-return 'abhijeet';
-}
-function validateEmailAndPassword(details) {
-  if (details.email === 'chavan.abhijeet1088@gmail.com' && details.password === 'abc') {
-    return true;
-  }
-  return false;
-}
 
 
 // launch an HTTP Server

@@ -14,6 +14,7 @@
 /meetup-gui/node_modules
 /meetup-app/node_modules
 /meetup-proxy/node_modules
+/meetup-authentication/node_modules
 
 # IDEs and editors
 /.idea

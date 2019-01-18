@@ -1,0 +1,87 @@
+Steps to create RSA256 public-private keys for authentication using JSON web key token:
+1) Create JSON Web Key using RSA-2048-Sign algorithm. Refer https://8gwifi.org/jwkfunctions.jsp
+eg: 
+{  
+   "p":"xtJSORVjnbkgrk98fPkK_UOcTIw7it-ZTIoz7sH4hsZSt9VG3xibNs1rWxVLA-yBAtKdkgmgTw1aty0xn-uBofFka_3-e3ueXqy1ICgyCc-5xBoHnboQRziwqCX4cubVy3Y9hS-p5r_AyZxP-m6irOTFrtFdPxfhxpt7UaB--kE",
+   "kty":"RSA",
+   "q":"vwjWB-z8_FCUIaxMfCW7Hv_b1pTI8uFlvjAPIKWaySqYavdhHqsDRuGrQbabCyAaSTzvP6-b3MLnV4aFuwiN86ybbPTuxyNKcJybutgtUEcoTHirhDp20YsVGE_B_qkmGDeKBJT5adDylfS99jyCZ9fCumQrWiCOvrUwqxBZ6sU",
+   "d":"PGr0Vip3ib_w2uKyDLpnb86eKhqwmBRe4TeMJ4RtxKlY7MTO6GjWYQrMlmAtgIm5_BaMsp8IBPXdXpe6ABrrAuIvhJyjbhA33WMpImWfgEyqMJctJwJRl5n012gTs7VlL5UiquJYuiBUpcy0rsdgJjFNuuaTFptluZo7cAd0MKjZiaO9kyJ1rDi3PlCiKq6phUt0irgBLdNr4eRgTibC6tu1C5jePwIfTEZDWbval9dBX0NTXofTV05VyddvRQGkMaEEEi3Gq-ENaIVc1ngheTkW2cJBJYq9R4cUcjZ6Skl3RULKW1GsineBC5zNoZdgJt45nhS88L0oSgG1R61AAQ",
+   "e":"AQAB",
+   "use":"sig",
+   "kid":"570ca2b0-c5a4-4818-adb2-b913d7f29e72",
+   "qi":"lC7YcSPRkKItMJ9o3hpfxorivLE4tUo8arrfj5uniHGqx1u-pGPxwWtcVBDj5m2wYmcwqeyMCzI5jpQx6dWoycYHu5z7urXQ2pIXT95uYuM3j0-lqwRZx4B5mWnBRzHMJFjFxgWrVhpE2ozXdTp8IyNvNdYw2t_Jpg4hzP4OML4",
+   "dp":"mcL2i-caz1PpDmWypQQFl7C-JAUf11rtt9_6IeApUDH4rutmkAr7nvpm2F4zUamKbKBt9A81x21QhvGQu1jrPE7vlwUr1lvYMufmfCQZ7rSTujFXSognJq2VEbWr21DibyPWmDYwc6BAfKtCvy7o6EVVDMomDzFtDqgYSxyQlwE",
+   "dq":"Z4dlXuQ7co5EyT70MG_OSg2FWXRGtwIaPokTGbFGAnF4KrgoRROO8hII2tMYkV3zgO9qBYypHmnuMAvyW5tWOtG3ZcQTx45DoGXvK8JORGxb1Z2r7jw0-niylPtceiO3RnaK8NK_nG4lmckKTfEbByXyHUt-BxkP4yCU4JA6-rU",
+   "n":"lF3IJSFIVAYWW6jy8uugopcn1ZJdzRfbEMppRsIzCqh-rWhSspF8Grdh7gMbU2hP3SpxqT6ROk0RYrwXjqCk0D3f1cHD8IimzohZrxsHuw1MtlgTA4ZgBLcQb2UYNX9RZAM-nm_EHCxX2Qee9YaW2ENqBC9nuTuDk_Od332Vt9ff-JlISeXniACp1cxar9FaxEjOn0vRm77T_LhWfSFJ-JREU9mBXqJ3EayOXp2BbNrFhhRdZ9iVFy47IqdT2_lD2F7nj1Z6Hl6dps9fQkMI6bVnUKNt2QQN47zPvkY6UWa5ddtVQsIV5mE4Tmy5Zr32Bi-0rzmp2TofeZe4ow7-BQ"
+}
+d: private key
+kid: key identifier used for requesting the public key
+rest other properties are used for public key in JSON web key token
+
+2) JSON Web Key into keyset:
+{
+    "keys": [
+        {  
+            "p":"xtJSORVjnbkgrk98fPkK_UOcTIw7it-ZTIoz7sH4hsZSt9VG3xibNs1rWxVLA-yBAtKdkgmgTw1aty0xn-uBofFka_3-e3ueXqy1ICgyCc-5xBoHnboQRziwqCX4cubVy3Y9hS-p5r_AyZxP-m6irOTFrtFdPxfhxpt7UaB--kE",
+            "kty":"RSA",
+            "q":"vwjWB-z8_FCUIaxMfCW7Hv_b1pTI8uFlvjAPIKWaySqYavdhHqsDRuGrQbabCyAaSTzvP6-b3MLnV4aFuwiN86ybbPTuxyNKcJybutgtUEcoTHirhDp20YsVGE_B_qkmGDeKBJT5adDylfS99jyCZ9fCumQrWiCOvrUwqxBZ6sU",
+            "d":"PGr0Vip3ib_w2uKyDLpnb86eKhqwmBRe4TeMJ4RtxKlY7MTO6GjWYQrMlmAtgIm5_BaMsp8IBPXdXpe6ABrrAuIvhJyjbhA33WMpImWfgEyqMJctJwJRl5n012gTs7VlL5UiquJYuiBUpcy0rsdgJjFNuuaTFptluZo7cAd0MKjZiaO9kyJ1rDi3PlCiKq6phUt0irgBLdNr4eRgTibC6tu1C5jePwIfTEZDWbval9dBX0NTXofTV05VyddvRQGkMaEEEi3Gq-ENaIVc1ngheTkW2cJBJYq9R4cUcjZ6Skl3RULKW1GsineBC5zNoZdgJt45nhS88L0oSgG1R61AAQ",
+            "e":"AQAB",
+            "use":"sig",
+            "kid":"570ca2b0-c5a4-4818-adb2-b913d7f29e72",
+            "qi":"lC7YcSPRkKItMJ9o3hpfxorivLE4tUo8arrfj5uniHGqx1u-pGPxwWtcVBDj5m2wYmcwqeyMCzI5jpQx6dWoycYHu5z7urXQ2pIXT95uYuM3j0-lqwRZx4B5mWnBRzHMJFjFxgWrVhpE2ozXdTp8IyNvNdYw2t_Jpg4hzP4OML4",
+            "dp":"mcL2i-caz1PpDmWypQQFl7C-JAUf11rtt9_6IeApUDH4rutmkAr7nvpm2F4zUamKbKBt9A81x21QhvGQu1jrPE7vlwUr1lvYMufmfCQZ7rSTujFXSognJq2VEbWr21DibyPWmDYwc6BAfKtCvy7o6EVVDMomDzFtDqgYSxyQlwE",
+            "dq":"Z4dlXuQ7co5EyT70MG_OSg2FWXRGtwIaPokTGbFGAnF4KrgoRROO8hII2tMYkV3zgO9qBYypHmnuMAvyW5tWOtG3ZcQTx45DoGXvK8JORGxb1Z2r7jw0-niylPtceiO3RnaK8NK_nG4lmckKTfEbByXyHUt-BxkP4yCU4JA6-rU",
+            "n":"lF3IJSFIVAYWW6jy8uugopcn1ZJdzRfbEMppRsIzCqh-rWhSspF8Grdh7gMbU2hP3SpxqT6ROk0RYrwXjqCk0D3f1cHD8IimzohZrxsHuw1MtlgTA4ZgBLcQb2UYNX9RZAM-nm_EHCxX2Qee9YaW2ENqBC9nuTuDk_Od332Vt9ff-JlISeXniACp1cxar9FaxEjOn0vRm77T_LhWfSFJ-JREU9mBXqJ3EayOXp2BbNrFhhRdZ9iVFy47IqdT2_lD2F7nj1Z6Hl6dps9fQkMI6bVnUKNt2QQN47zPvkY6UWa5ddtVQsIV5mE4Tmy5Zr32Bi-0rzmp2TofeZe4ow7-BQ"
+        }
+    ]
+}
+these keys are exposed as public keys from authentication server.
+delete private key(i.e. 'd') and then save as public.json
+
+
+3) Convert JWK Web Key into PEM format(RSA and EC Supported). Refer https://8gwifi.org/jwkconvertfunctions.jsp
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlF3IJSFIVAYWW6jy8uug
+opcn1ZJdzRfbEMppRsIzCqh+rWhSspF8Grdh7gMbU2hP3SpxqT6ROk0RYrwXjqCk
+0D3f1cHD8IimzohZrxsHuw1MtlgTA4ZgBLcQb2UYNX9RZAM+nm/EHCxX2Qee9YaW
+2ENqBC9nuTuDk/Od332Vt9ff+JlISeXniACp1cxar9FaxEjOn0vRm77T/LhWfSFJ
++JREU9mBXqJ3EayOXp2BbNrFhhRdZ9iVFy47IqdT2/lD2F7nj1Z6Hl6dps9fQkMI
+6bVnUKNt2QQN47zPvkY6UWa5ddtVQsIV5mE4Tmy5Zr32Bi+0rzmp2TofeZe4ow7+
+BQIDAQAB
+-----END PUBLIC KEY-----
+
+save as public.key
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAlF3IJSFIVAYWW6jy8uugopcn1ZJdzRfbEMppRsIzCqh+rWhS
+spF8Grdh7gMbU2hP3SpxqT6ROk0RYrwXjqCk0D3f1cHD8IimzohZrxsHuw1MtlgT
+A4ZgBLcQb2UYNX9RZAM+nm/EHCxX2Qee9YaW2ENqBC9nuTuDk/Od332Vt9ff+JlI
+SeXniACp1cxar9FaxEjOn0vRm77T/LhWfSFJ+JREU9mBXqJ3EayOXp2BbNrFhhRd
+Z9iVFy47IqdT2/lD2F7nj1Z6Hl6dps9fQkMI6bVnUKNt2QQN47zPvkY6UWa5ddtV
+QsIV5mE4Tmy5Zr32Bi+0rzmp2TofeZe4ow7+BQIDAQABAoIBADxq9FYqd4m/8Nri
+sgy6Z2/OnioasJgUXuE3jCeEbcSpWOzEzuho1mEKzJZgLYCJufwWjLKfCAT13V6X
+ugAa6wLiL4Sco24QN91jKSJln4BMqjCXLScCUZeZ9NdoE7O1ZS+VIqriWLogVKXM
+tK7HYCYxTbrmkxabZbmaO3AHdDCo2YmjvZMidaw4tz5QoiquqYVLdIq4AS3Ta+Hk
+YE4mwurbtQuY3j8CH0xGQ1m72pfXQV9DU16H01dOVcnXb0UBpDGhBBItxqvhDWiF
+XNZ4IXk5FtnCQSWKvUeHFHI2ekpJd0VCyltRrIp3gQuczaGXYCbeOZ4UvPC9KEoB
+tUetQAECgYEAxtJSORVjnbkgrk98fPkK/UOcTIw7it+ZTIoz7sH4hsZSt9VG3xib
+Ns1rWxVLA+yBAtKdkgmgTw1aty0xn+uBofFka/3+e3ueXqy1ICgyCc+5xBoHnboQ
+RziwqCX4cubVy3Y9hS+p5r/AyZxP+m6irOTFrtFdPxfhxpt7UaB++kECgYEAvwjW
+B+z8/FCUIaxMfCW7Hv/b1pTI8uFlvjAPIKWaySqYavdhHqsDRuGrQbabCyAaSTzv
+P6+b3MLnV4aFuwiN86ybbPTuxyNKcJybutgtUEcoTHirhDp20YsVGE/B/qkmGDeK
+BJT5adDylfS99jyCZ9fCumQrWiCOvrUwqxBZ6sUCgYEAmcL2i+caz1PpDmWypQQF
+l7C+JAUf11rtt9/6IeApUDH4rutmkAr7nvpm2F4zUamKbKBt9A81x21QhvGQu1jr
+PE7vlwUr1lvYMufmfCQZ7rSTujFXSognJq2VEbWr21DibyPWmDYwc6BAfKtCvy7o
+6EVVDMomDzFtDqgYSxyQlwECgYBnh2Ve5DtyjkTJPvQwb85KDYVZdEa3Aho+iRMZ
+sUYCcXgquChFE47yEgja0xiRXfOA72oFjKkeae4wC/Jbm1Y60bdlxBPHjkOgZe8r
+wk5EbFvVnavuPDT6eLKU+1x6I7dGdorw0r+cbiWZyQpN8RsHJfIdS34HGQ/jIJTg
+kDr6tQKBgQCULthxI9GQoi0wn2jeGl/GiuK8sTi1Sjxqut+Pm6eIcarHW76kY/HB
+a1xUEOPmbbBiZzCp7IwLMjmOlDHp1ajJxge7nPu6tdDakhdP3m5i4zePT6WrBFnH
+gHmZacFHMcwkWMXGBatWGkTajNd1OnwjI2811jDa38mmDiHM/g4wvg==
+-----END RSA PRIVATE KEY-----
+
+save as private.key
+
+4) make private.key available at authentication server only for creating tokens.
+5) expose public.json as public directory for other servers to access.
