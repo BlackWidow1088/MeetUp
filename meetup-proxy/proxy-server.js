@@ -11,7 +11,12 @@ http://localhost:4200
 var http = require('http');
 var httpProxy = require('http-proxy');
 
-var APP_URL = 'http://localhost:4200';
+const type = process.argv[2];
+
+var GUI_URL = 'http://localhost:5050';
+if(type === 'dev') {
+  GUI_URL = 'http://localhost:4200';
+}
 
 var API_PATHS = ['/api'];
 var API_URL = 'http://localhost:9000';
@@ -22,7 +27,7 @@ var AUTH_URL = 'http://localhost:9002';
 var proxy = httpProxy.createProxyServer({ changeOrigin: true });
 
 var server = http.createServer(function (req, res) {
-  var target = APP_URL;
+  var target = GUI_URL;
 
   for (var i = 0; i < API_PATHS.length; i++) {
     if (req.url.startsWith(API_PATHS[i])) {

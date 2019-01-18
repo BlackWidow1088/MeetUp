@@ -2,10 +2,12 @@
     "name": "meetup-proxy",
     "version": "0.0.0",
     "scripts": {
-        "proxy-server": "nodemon dev-proxy-server.js"
+        "proxy-server": "nodemon proxy-server.js",
+        "prod-server": "nodemon prod-server.js"
     },
     "private": true,
     "dependencies": {
+        "express": "^4.16.4",
         "nodemon": "^1.18.9",
         "http-server": "^0.11.1"
     },

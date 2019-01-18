@@ -6,9 +6,11 @@
     "gui-server-prod": "pushd meetup-gui && npm run prod && popd",
     "authentication-server": "pushd meetup-authentication && npm run auth-server && popd",
     "app-server": "pushd meetup-app && npm run app-server && popd",
-    "proxy-server": "pushd meetup-proxy && npm run proxy-server && popd",
-    "dev": "concurrently --kill-others \"npm run gui-server-dev\" \"npm run app-server\" \"npm run authentication-server\" \"npm run proxy-server\"",
-    "prod": "npm run gui-server-prod && npm run app-server && npm run authentication-server"
+    "proxy-server-dev": "pushd meetup-proxy && npm run proxy-server dev && popd",
+    "proxy-server-prod": "pushd meetup-proxy && npm run proxy-server && popd",
+    "prod-server": "pushd meetup-proxy && npm run prod-server && popd",
+    "dev": "concurrently --kill-others \"npm run gui-server-dev\" \"npm run app-server\" \"npm run authentication-server\" \"npm run proxy-server-dev\"",
+    "prod": "npm run gui-server-prod && concurrently \"npm run app-server\" \"npm run authentication-server\" \"npm run prod-server\" \"npm run proxy-server-prod\""
   },
   "private": true,
   "dependencies": {},

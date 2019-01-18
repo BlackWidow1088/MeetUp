@@ -31,8 +31,6 @@ webpush.setVapidDetails(
 );
 
 app.use(bodyParser.json());
-app.use(express.static('../meetup-gui-build'));
-app.use('/', express.static('../meetup-gui-build/meetup-gui'));
 app.use(busboy());
 app.route('/api/lessons')
   .get(tokenMiddleware.checkToken, readAllLessons);
