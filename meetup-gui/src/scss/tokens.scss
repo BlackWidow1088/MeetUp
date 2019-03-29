@@ -626,7 +626,7 @@ $app-tokens: (
     'namespace': $app-namespace
 );
 
-@function luci-token($keys...) {
+@function app-token($keys...) {
     $map: $app-tokens;
     @each $key in $keys {
         $map: map-get($map, $key);

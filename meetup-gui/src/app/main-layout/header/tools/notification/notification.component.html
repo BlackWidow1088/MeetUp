@@ -1,0 +1,35 @@
+<span #notificationCount attr.data-notifications="{{ totalNotifications }}" class="fp-notification-count faa-float faa-fast fp-bold"
+  [ngClass]="{ active: notificationAcknowledge }">
+</span>
+
+<div id="notificationsPanel" tabindex="0" i18n-title="Notification Panel - notification title| Title for notification@@notification-panel-notification-title"
+  title="Notifications" (click)="op.toggle($event); notificationAcknowledge = false" class="fp-right-img">
+  <img class="fp-icon-size" src="assets/icons/icon-notification.svg" />
+</div>
+
+<p-overlayPanel #op class="fp-notify-overlay">
+  <div class="fp-external">
+    <h4>
+      {{ totalNotifications }}
+      <span i18n="Notification Panel - pending notifications| Text for pending notification@@notification-panel-pending-notification">
+        pending notifications
+      </span>
+    </h4>
+
+    <a id="dismissAll" (click)="dismissUserNotification()" *ngIf="notificationList?.length" i18n="Notification Panel - Dismiss all| Text for dismiss all notification@@notification-panel-dismiss-all">Dismiss all</a>
+  </div>
+
+  <div class="fp-notify-allmessages">
+    <div class="fp-notify-messages ui-g" *ngFor="let msg of notificationList">
+      <div class="ui-g-1 fp-padding-t-none">
+        <img class="fp-icon-size" src="{{mapStatusToIcon(msg.type)}}" />
+      </div>
+      <span class="ui-g-10 fp-notification-msg-text">{{msg.message}}
+        <span class="fp-notification-timestamp">{{msg.timestamp | timeAgo}}</span>
+      </span>
+      <i id="dismissUserNotification" class="ui-g-1 fa fa-close fp-notify-close" (click)="dismissUserNotification(msg.id)"></i>
+    </div>
+  </div>
+
+  <i class="fa fa-fw fa-caret-up fp-uparrow-icon fp-notification-menu-icon"></i>
+</p-overlayPanel>

@@ -1,0 +1,25 @@
+<span attr.data-notifications="{{ jobCount }}" class="fp-notification-count faa-float faa-fast fp-bold"
+[ngClass]="{ active: hasJobCountAcknowledgement }">
+</span>
+
+<div id="operationMenu" tabindex="0" title="Operations" (click)="opMenu.toggle($event); toggleJobNotification()" class="fp-right-img">
+  <img class="fp-icon-size" src="assets/icons/icon-operations.svg" />
+</div>
+
+<p-overlayPanel #opMenu class="fp-notify-overlay">
+  <div class="fp-external">
+    <span class="fp-bold">
+      Operations
+    </span>
+  </div>
+
+  <div class="fp-notify-allmessages">
+    <div class="ui-g fp-padding-t-none fp-cursor-pointer" routerLink="/csa/job" (click)="opMenu.hide($event)">
+
+      <span class="ui-g-10 fp-margin-l-xxs fp-link"> Remediation Action</span>
+      <span attr.data-notifications="{{ jobCount }}" class="fp-notification-count fp-job-navigate faa-float faa-fast fp-bold">
+      </span>
+    </div>
+  </div>
+<i class="fa fa-fw fa-caret-up fp-uparrow-icon fp-operation-menu-icon"></i>
+</p-overlayPanel>

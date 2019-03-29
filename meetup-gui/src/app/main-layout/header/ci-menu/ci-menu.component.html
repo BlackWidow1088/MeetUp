@@ -1,0 +1,58 @@
+<ul class="fp-subMenu-nav-items">
+  <ng-container *ngFor="let subMenu of subMenuOptions, let i = index; trackBy: trackByFn">
+    <li *ngIf="nodesList[subMenu.title] && subMenu.title !== 'System Diagram'"
+      class="fp-pos-relative"
+      [ngClass]="isRouterLinkActive(subMenu.title) ? 'fp-subMenu-bar-active' : 'fp-subMenu-bar-inactive'">
+
+      <a id="subMenuLink{{subMenu.title}}"
+        class="fp-padding-xs"
+        (click)="createLink(subMenu.route, selectedSystem)"
+        i18n="CI Sub Menu titles@@ci-submenu-titles">
+        {subMenu.title, select, Storage {Storage} Network {Network} Compute {Compute} Virtualization {Virtualization}}
+      </a>
+
+      <i *ngIf="nodesList[subMenu.title]"
+        (click)="showDropDown(i);"
+        class="fa fa-caret-down fp-icon-tree-dropdown">
+      </i>
+
+      <div *ngIf="dropDownIndex === i && displayDropDown" class="fp-tree-list">
+        <app-tree-view
+          [nodes]="nodesList[subMenu.title]"
+          (hideRightSideNav)='displayDropDown = $event'>
+        </app-tree-view>
+      </div>
+    </li>
+
+    <li *ngIf="subMenu.title === 'System Diagram' && selectedSystem.rdoc"
+        class="fp-pos-relative"
+        [ngClass]="isRouterLinkActive(subMenu.title) ? 'fp-subMenu-bar-active' : 'fp-subMenu-bar-inactive'">
+
+      <a id="subMenuLink{{subMenu.title}}"
+        class="fp-padding-xs"
+        (click)="createLink(subMenu.route, selectedSystem)"
+        i18n="CI Sub Menu titles@@ci-submenu-titles">
+        {subMenu.title, select, System Diagram {System Diagram}}
+      </a>
+    </li>
+  </ng-container>
+
+  <li (click)="moreOptionsMenu.toggle($event)" class="fp-moreOptions">
+    <span>{{ !selectedSystem.rdoc && selectedSystem.systemId ? 'Actions' : 'More' }}
+      <i id="subMenuMore" class="fa fa-caret-down fp-margin-l-xxs fp-icon-tree-dropdown"></i>
+    </span>
+  </li>
+
+  <div class="fp-float-right fp-collect-menu" *ngIf="!!selectedSystem.rdoc">
+    <app-collect-snapshot
+      [snapshotInput]="{systemId:selectedSystem?.systemId, rdocId:selectedSystem?.rdocId, agentStatus: selectedSystem?.agentOnline}">
+    </app-collect-snapshot>
+  </div>
+</ul>
+
+<p-menu
+  #moreOptionsMenu
+  popup="popup"
+  [model]="moreOptions"
+  styleClass="fp-menu fp-more-menu">
+</p-menu>

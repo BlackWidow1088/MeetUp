@@ -39,7 +39,7 @@ export class UserPreferenceService {
     // TODO: get user id from data store
     const userId = '123';
     return this.apiBaseService
-      .get(`system/settings/${userId}`).pipe(
+      .get(`api/system/settings/${userId}`).pipe(
         map((res) => {
           this.preferences = JSON.parse(res);
           this.userPreferenceSource.next({ componentPreference: null, isNew: true })

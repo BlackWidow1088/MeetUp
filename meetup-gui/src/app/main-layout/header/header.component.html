@@ -1,0 +1,56 @@
+<div class="navbar">
+  <div class="main-navbar">
+    <div class="navbar-nav nav">
+      <div class="nav-item">
+        <div class="fp-header-title" i18n="Product Title - CSA| Text for product name, displayed on top left corner@@csa-product-name">CSA</div>
+
+        <div id="dashboardLink" tabindex="0" class="fp-header-dashboard" [ngClass]="{ 'selected': !selectedSystem?.rdoc && !selectedSystem?.systemName }"
+          routerLink="{{ dashboardRoute }}">
+          <span *ngIf="!isNetAppEmployee && !isPartner" i18n="Header - Dashboard| Text for datacenter dashboard, displayed on header, immediately right of the product name @@header-datacenter-dashboard">Dashboard</span>
+          <span *ngIf="isNetAppEmployee || isPartner" i18n="Header - Home| Text for home@@header-datacenter-home">Home</span>
+        </div>
+        <app-ci-dropdown
+          [selectedSystem]="selectedSystem"
+          [ciDropdownLabel]="ciDropdownLabel"
+          [filteredSystemsList]="filteredSystemsList"
+          [systemInfoList]="originalSystemsList">
+        </app-ci-dropdown>
+      </div>
+
+      <div class="fp-secondary-menu fp-margin-r-xs">
+        <app-tools></app-tools>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-menu-navbar" *ngIf="!selectedSystem?.rdoc && !selectedSystem?.systemId">
+    <app-menu [allOptions]="allOptions"></app-menu>
+  </div>
+
+  <div class="fp-subMenu-bar" *ngIf="selectedSystem?.rdoc || selectedSystem?.systemId">
+    <app-ci-menu
+      [selectedSystem]="selectedSystem"
+      [subMenuOptions]="subMenuOptions"
+      [nodesList]="nodesList"
+      [moreOptions]="moreOptions"
+      [displayDropDown]="displayDropDown">
+    </app-ci-menu>
+  </div>
+</div>
+
+
+<p-dialog header="Attention!!"
+  [(visible)]="showModifyDeleteRestrictionDialog"
+  [modal]="true"
+  [responsive]="true">
+    <span>Cannot modify or delete a CI when a collection is in progress.</span>
+    <p-footer>
+      <button
+        type="button"
+        class="fp-btn fp-btn-primary"
+        pButton
+        (click)="blockModifyOrDeleteDialogClick()"
+        label="OK">
+      </button>
+    </p-footer>
+</p-dialog>

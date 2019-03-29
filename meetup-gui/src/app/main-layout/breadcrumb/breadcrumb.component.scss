@@ -1,0 +1,18 @@
+@import 'src/scss/_variables.scss';
+
+ul.fp-breadcrumb {
+  padding: 7px 16px;
+  list-style: none;
+
+  li {
+    display: inline;
+    text-transform: capitalize;
+  }
+
+  /* Add a '>' symbol before/behind each list item */
+  li+li:before {
+    padding: 8px;
+    content: ">\00a0";
+  }
+
+}

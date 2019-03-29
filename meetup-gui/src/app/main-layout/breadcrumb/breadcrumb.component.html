@@ -1,0 +1,8 @@
+<div class="fp-breadcrumb-container">
+  <ul class="fp-breadcrumb">
+    <li *ngFor="let breadcrumb of breadcrumbs; let last = last; let i = index">
+      <a id="breadcrumb-{{i}}" *ngIf="!last" (click)="navigateBreadcrumb(breadcrumb)">{{ breadcrumb.label }}</a>
+      <strong id="breadcrumb-{{i}}" *ngIf="last">{{ queryParams.breadcrumb || breadcrumb.label }}</strong>
+    </li>
+  </ul>
+</div>

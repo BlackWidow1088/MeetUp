@@ -1,0 +1,707 @@
+@import 'src/scss/_variables.scss';
+
+.navbar {
+  height: $top-nav-container-height;
+  padding: 0;
+
+  .main-navbar {
+    flex: 1;
+    height: 55px;
+    background: $luci-background-color-medium-blue;
+    border-bottom: 0;
+
+    .ui-menu {
+      padding: $luci-space-inset-xxs;
+    }
+
+    .navbar-nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .nav-item {
+        cursor: default;
+        height: 100%;
+        text-align: left;
+        align-items: center;
+        display: flex;
+        flex: 1 1 auto;
+        margin: 0 15px;
+        padding: 0 1px;
+        color: $luci-text-color-primary-on-dark;
+      }
+    }
+  }
+
+  .sub-menu-navbar {
+    height: 44px;
+    width: 100%;
+    background: $luci-background-color-dark-blue ;
+    overflow: hidden;
+
+    .navbar-nav {
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-grow: 1;
+      transition: width .25s ease-in;
+    }
+
+    .nav-item {
+      width: auto;
+      font-size: 14px;
+      background: $luci-background-color-dark-blue;
+      padding: 0 $luci-space-inset-xxs;
+      height: 100%;  // Firefox needs this to display bottom highlight
+      outline: none;
+      position: relative;
+      color: #cfddfb;
+      cursor: pointer;
+      transition: width .25s ease-in;
+
+      &.selected .nav-item-container {
+        font-weight: normal;
+      }
+
+      .nav-item-container {
+        height: 45px;
+        color: $luci-text-color-primary-on-dark;
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        overflow: hidden;
+
+        &:hover {
+          font-weight: normal;
+          text-decoration: none;
+          background: none;
+        }
+
+        .icon-container {
+          margin: 0 5px 0 0;
+        }
+
+        .nav-title {
+          letter-spacing: $csa-letter-spacing-half;
+        }
+      }
+    }
+
+    .nav-item.selected {
+      border-bottom: 5px solid $luci-interactive-color-focus;
+      background: $luci-background-color-dark-blue;
+    }
+  }
+}
+
+.fp-header-title {
+  width: 90px;
+  font-size: $luci-font-size-h3-lg;
+  cursor: default;
+}
+
+.fp-select-cli {
+  &.ui-dropdown {
+    background: transparent;
+    padding-right: 0;
+    border: none;
+
+    label.ui-dropdown-label {
+      background: transparent;
+      border: none;
+      color: $luci-text-color-primary-on-dark;
+      font-size: $luci-font-size-md;
+      letter-spacing: $csa-letter-spacing-half;
+      padding: 14px 20px 14px 0;
+    }
+
+    .ui-dropdown-trigger {
+      background: transparent;
+      border-left: none;
+      color: $luci-background-color-white;
+      padding-top: $luci-space-sm;
+      width: 20px;
+      top: -2px;
+
+      .fa {
+        font-size: $luci-icon-size-sm;
+        vertical-align: super;
+      }
+    }
+
+    &.ui-widget.ui-state-default.ui-corner-all.ui-helper-clearfix {
+      border-radius: 0;
+
+      &.ui-state-focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.ui-dropdown:hover {
+    background: transparent;
+    border: none;
+  }
+
+  > .ui-dropdown-panel {
+    min-width: 120%;
+    border-radius: 0;
+
+    .ui-dropdown-item {
+      font-size: 15px;
+      padding: 5px;
+      border-radius: $luci-border-radius-default;
+    }
+
+    .ui-dropdown-list {
+      padding: 0.4rem;
+    }
+  }
+}
+
+.fp-logout-text {
+  margin-top: 4px;
+}
+
+.navbar-nav {
+  width: 100%;
+  flex-direction: row;
+}
+
+.navbar .fp-analyze-button {
+  background: $luci-brand-color;
+  border-radius: $luci-border-radius-default;
+  color: $luci-text-color-primary-on-dark;
+  border: none;
+  margin-right: 20px;
+}
+
+.fp-top-bar {
+  left: 120px;
+}
+
+.fp-net-top-bar {
+  left: 250px;
+}
+
+.fp-storage-top-bar {
+  left: 18px;
+}
+
+.fp-virtual-top-bar {
+  left: 375px;
+  position: relative;
+  z-index: 9999;
+}
+
+tree-viewport {
+  overflow: visible !important;
+}
+
+.fp-icon-tree-dropdown {
+  font-size: $luci-font-size-xs;
+  cursor: pointer;
+}
+
+.fp-subMenu-bar {
+  background-color:  $luci-background-color-dark-blue;
+  letter-spacing: $csa-letter-spacing-half;
+  height: 44px;
+  width: 100%;
+
+  &-active {
+    border-bottom: 5px solid #4FAAFF;
+    color: $luci-text-color-primary-on-dark;
+    a:hover {
+      color: $luci-text-color-primary-on-dark;
+      text-decoration: none;
+    }
+  }
+
+  &-inactive {
+    border-bottom: 2px solid transparent;
+    color: $luci-text-color-primary-on-dark;
+    a:hover {
+      color: $luci-text-color-primary-on-dark;
+      text-decoration: none;
+    }
+  }
+
+  .fp-icon:before {
+    padding-right: 5px;
+  }
+
+  ul {
+    display: inline;
+    padding-left: 0;
+    &.ui-menu-list{
+      display: inline-grid;
+    }
+  }
+}
+
+.fp-moreOptions .fp-menu{
+  margin-top: 5px;
+}
+
+.fp-subMenu-nav-items {
+  li {
+    color: $luci-text-color-primary-on-dark;
+    display: inline;
+    font-size: $luci-font-size-sm;
+    padding: 14px 15px 8px;
+    line-height: 44px;
+    cursor: pointer;
+  }
+}
+
+.fp-header-dashboard {
+  font-size: $luci-font-size-md;
+  color: $luci-text-color-primary-on-dark;
+  letter-spacing: $csa-letter-spacing-half;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.fp-header-select {
+  &.selected {
+    .fp-select-cli.ui-dropdown {
+      margin-bottom: -7px;
+    }
+  }
+
+  .fa-caret-down {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .ui-dropdown-open .fa-caret-down {
+    transform: rotate(180deg);
+  }
+
+  .btn-outline-primary {
+    color: $luci-text-color-primary-on-dark;
+    border: 0;
+    font-size: 16px;
+    letter-spacing: $csa-letter-spacing-half;
+
+    &:not([disabled]):not(.disabled):active,
+    &.dropdown-toggle {
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    &:after {
+      margin-left: 10px;
+      width: 8px;
+      height: 8px;
+      vertical-align: middle;
+    }
+  }
+
+  &.show {
+    background: #23549e;
+
+    > .btn-outline-primary {
+      &:after {
+        border-top: 0;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0.3em solid;
+        border-left: 0.3em solid transparent;
+        margin-top: -8px;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    margin-top: 16px;
+    padding: 0;
+    min-width: 200px;
+    border-radius: $luci-border-radius-default;
+    border-color: $luci-color-neutral-84;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    color: $luci-text-color-primary-on-light;
+    letter-spacing: $csa-letter-spacing-half;
+    background: $csa-dropdown-menu-background-color;
+    z-index: 2222;
+    left: 0 !important; // no other way to override ngbDropdown dynamically generated value.
+
+    .fp-global-search {
+      width: 100%;
+      border-bottom: 1px solid $luci-color-neutral-84;
+
+      .fp-searchicon {
+        top: 14px;
+        right: 13px;
+      }
+
+      input {
+        width: calc(100% - 14px);
+        margin: 6px 7px;
+        padding: 3px 25px 3px 5px;
+        border: 1px solid $luci-color-neutral-84;
+        border-radius: $luci-border-radius-default;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .ci-list-container {
+      min-height: auto;
+      max-height: calc(100vh - 200px);
+      overflow-x: hidden;
+      min-width: 250px;
+    }
+
+    .list-unstyled {
+      margin-bottom: 0;
+      padding: 0 7px 5px;
+      height: auto;
+
+      &:first-of-type {
+        padding-top: 5px;
+      }
+
+      &:last-of-type {
+        padding-bottom: 10px;
+      }
+
+      span {
+        padding: 3px 5px;
+        display: inline-block;
+        width: 100%;
+        text-transform: uppercase;
+        color: $luci-color-black;
+        background: #e3e3e3;
+      }
+
+      &.empty-list {
+        padding-bottom: 5px;
+
+        span {
+          background: $luci-color-white;
+          text-align: center;
+          text-transform: unset;
+        }
+      }
+
+      .dropdown-item {
+        padding: 3px 5px 3px 15px;
+        letter-spacing: $csa-letter-spacing-half;
+        color: $luci-color-blue-35;
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: $luci-color-neutral-85;
+          color: $luci-interactive-color-hover;
+        }
+
+        &.ui-dropdown-item.ui-state-highlight {
+          color: $luci-link-color-default-on-dark;
+        }
+
+        &.ui-dropdown-item.ui-state-highlight:hover {
+          color: $luci-interactive-color-hover;
+        }
+      }
+    }
+  }
+}
+
+.fp-header-dashboard,
+.fp-header-select {
+  height: 55px;
+  width: auto;
+  padding: 15px;
+
+  &.selected {
+    border-bottom: 5px solid $luci-interactive-color-focus;
+  }
+}
+
+.fa-angle-double-right {
+  padding-top: 2px;
+}
+
+.fp-uparrow-icon {
+  position: absolute;
+  top: -17px;
+  height: 13px;
+  z-index: 9999;
+  color: #f2f2f2;
+  font-size: $luci-font-size-h4-lg;
+}
+
+.fp-operation-menu-icon {
+  right: 110px;
+}
+
+.fp-notification-menu-icon {
+  right: 74px;
+}
+
+.fp-notify-allmessages {
+  max-height: 300px;
+  overflow: auto;
+  width: 100%;
+}
+
+.fp-notify-overlay {
+  .fp-external {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .ui-overlaypanel-content {
+    padding: 0;
+    background: $csa-dropdown-menu-background-color;
+  }
+
+  .ui-overlaypanel.ui-widget.ui-widget-content {
+    left: auto !important;
+    top: auto !important;
+    right: 20px;
+    margin-top: 10px;
+    min-width: 220px;
+    max-width: 600px;
+    background: #fefefe;
+  }
+}
+
+.fp-notify-messages {
+  width: 100%;
+  padding: 7px;
+  border-bottom: $luci-border-component-on-light;
+  color: $luci-background-color-dark;
+
+  &:hover {
+    background: $luci-color-neutral-96;
+  }
+}
+
+.fp-notification-msg-text {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.fp-notification-timestamp {
+  display: block;
+  color: $luci-text-color-primary-on-light;
+  font-weight: lighter;
+}
+
+.fp-notify-close {
+  color: $luci-text-color-primary-on-light;
+  cursor: pointer;
+  text-align: right
+}
+
+.fp-external {
+  padding: 10px;
+  width: 100%;
+  font-size: $luci-font-size-sm;
+  display: flex;
+  align-items: center;
+
+  h4 {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+  }
+}
+
+.fp-icon-analysis {
+  height: 23px
+}
+
+.fp-icon-history {
+  width: 18px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+
+.fp-notification-count[data-notifications] {
+  position: relative;
+
+  &.fp-job-navigate:after {
+    background-color: $luci-feedback-color-error-primary;
+    color: $luci-background-color-white;
+    top: 6px;
+    right: -25px;
+  }
+
+  &.active {
+    &:after {
+      background-color: $luci-feedback-color-error-primary;
+      color: $luci-background-color-white;
+    }
+  }
+
+  &:after {
+    content: attr(data-notifications);
+    background: $luci-background-color-white;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 3px 9px;
+    color: $luci-color-black;
+    font-size: 11px;
+    position: absolute;
+    top: -12px;
+    right: -20px;
+  }
+}
+
+.fp-user-menu {
+  width: auto;
+  max-width: 210px;
+  min-width:150px;
+  right: 15px;
+  left: unset !important;
+
+  ul > li {
+    &:first-child > a {
+      background-image: url("../../../../assets/icons/icon-user-blue.svg");
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: left;
+
+      &:hover {
+        background-image: url("../../../../assets/icons/icon-user-blue.svg") !important;
+      }
+    }
+
+    &:last-child > a {
+      background-image: url("../../../../assets/icons/icon-logout.svg");
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: left;
+
+      &:hover {
+        background-image: url("../../../../assets/icons/icon-logout.svg") !important;
+      }
+    }
+  }
+}
+
+.fp-user-menu {
+  &.ui-menu {
+    .ui-menuitem-text {
+      margin-left: 20px;
+    }
+  }
+}
+.fp-collect-menu {
+  margin-top: 7px;
+  color: white;
+  cursor: pointer;
+  .fp-menu{
+    margin-top: 15px;
+  }
+}
+
+.fp-menu.fp-more-menu{
+  padding: 5px 0px 5px 0px;
+  margin-top: 5px;
+    ul {
+      width: 100%;
+    li {
+      padding: 0px 5px;
+      &.fp-menu-separator {
+        padding-top: 5px;
+        margin-top: 5px;
+        border-top: 1px solid $luci-color-neutral-76;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.fp-menu {
+  &.ui-menu {
+    background: $luci-background-color-white;
+
+    .ui-menuitem-text {
+      float: none;
+      display: inherit;
+    }
+
+    .ui-menu-list .ui-menuitem {
+      padding: 3px;
+
+      &:hover {
+        background-color: $luci-color-neutral-85;
+        border: none;
+      }
+    }
+
+    .ui-menuitem .ui-menuitem-link {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      &:hover {
+        background-color: $luci-color-neutral-85;
+        color: $luci-background-color-dark;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: left;
+        border-radius: 0;
+        .ui-menuitem-text {
+          text-decoration: none;
+          color: none;
+        }
+      }
+
+      .ui-menuitem-icon {
+        display: inline-block;
+        vertical-align: middle;
+        font-family: 'simple-line-icons';
+        margin-right: 10px;
+        color: $luci-text-color-primary-on-light;
+      }
+    }
+  }
+}
+
+// Need to override font awesome fonts
+.ui-button-icon-left,
+.ui-menuitem-icon {
+  &.fa {
+    width: 20px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: $ipadScreen) {
+  body .navbar .sub-menu-navbar {
+    z-index: 1;
+  }
+
+  .fp-subMenu-bar ul {
+    li {
+      padding: 14px 8px 8px;
+    }
+  }
+}
+
+.fp-build-info {
+  color: $luci-text-color-primary-on-dark;
+  padding-right: 20px;
+  margin: auto;
+  font-size: $luci-font-size-sm;
+}
+
+.fp-tree-list {
+  position: absolute;
+  top: 38px;
+  left: 25px;
+  z-index: 2;
+}

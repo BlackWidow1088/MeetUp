@@ -12,4 +12,16 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  onScroll() {
+    const list = document.querySelectorAll('.ui-multiselect-panel');
+
+    Array.prototype.forEach.call(list, function (item) {
+      item.style.display = 'none';
+    });
+  }
+
+  onActivate(scrollContainer) {
+    scrollContainer.scrollTop = 0;
+  }
+
 }

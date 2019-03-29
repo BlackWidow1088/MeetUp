@@ -297,7 +297,8 @@ export class SystemDiagramDataService {
     if (parsedUrl && parsedUrl.systemId && parsedUrl.rdocId) {
         try {
           this.messageBoardService.clear();
-          this.apiBaseService.get(`/system/${parsedUrl.systemId}/diagram`).subscribe(res => {
+          this.apiBaseService.get(`api/system/${parsedUrl.systemId}/diagram`).subscribe(res => {
+            console.log('systems', res);
             if (res.nodes) {
               this.preProcessData(res);
               // Filtering 'Blade server' and 'FEX' as for Huron-2.0, we will be showing chassis with static image.

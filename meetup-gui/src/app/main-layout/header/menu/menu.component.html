@@ -1,0 +1,23 @@
+<ul *ngIf="allOptions" class="navbar-nav nav">
+  <li tabindex="0" id="{{ subMenuOption.title }}" class="nav-item" *ngFor="let subMenuOption of allOptions; trackBy: trackByFn;let i = index"
+    [ngClass]="{ 'fp-subMenu-bar-active': isRouterLinkActive(subMenuOption.routerLinkTitle ? subMenuOption.routerLinkTitle : subMenuOption.title) }" [hidden]="subMenuOption.title === 'Dashboard'">
+    <!-- TODO move this to separate component -->
+    <a id="submenu-{{i}}" *ngIf="subMenuOption.title === 'Download Agent'" [href]="downloadAgentLinkUrl" class="nav-item-container" target="_blank">
+      <span class="icon-container">
+        <img class="fp-icon-size fp-icon-pos" src="{{ subMenuOption.icon }}" />
+      </span>
+
+      <span class="nav-title" i18n="Left Nav - Download Agent| Text for Download Agent link in left nav@@left-nav-downloadAgent">Download Agent</span>
+    </a>
+
+    <a id="submenu-{{i}}" routerLink="{{subMenuOption.route}}" *ngIf="subMenuOption.title !== 'Download Agent' && subMenuOption.title !== 'Dashboard'"
+      class="nav-item-container">
+      <span class="icon-container">
+        <img class="fp-icon-size fp-icon-pos" src="{{ subMenuOption.icon }}" />
+      </span>
+
+      <span class="nav-title" i18n="Left Nav Links|Text for links in left nav bar@@left-nav-links">
+        {subMenuOption.title, select, Add Infrastructure {Add Infrastructure} Partner Portal {Partner Portal} Welcome Guide {Welcome Guide} Rules {Rules} Reports {Reports} other {Unknown}}</span>
+    </a>
+  </li>
+</ul>

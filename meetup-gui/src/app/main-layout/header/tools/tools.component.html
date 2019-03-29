@@ -1,0 +1,18 @@
+<span *ngIf="!ifProdEnv" class="fp-build-info">
+  <ng-container i18n="Header - Build Number| Text for Build Number@@header-build-number">Build No.: </ng-container>{{ buildId.id }}
+</span>
+
+<app-operations></app-operations>
+
+<app-notification></app-notification>
+
+<p-menu #settingsMenu popup="popup" [model]="settings" styleClass="fp-menu"></p-menu>
+<div id="settingsMenu" tabindex="0" i18n-title="Settings Menu Popup- title| Title for Settings Menu popup@@settings-menu-popup-title"
+  title="Settings" (click)="settingsMenu.toggle($event)" class="fp-right-img">
+  <img class="fp-icon-size" src="assets/icons/icon-setting.svg" />
+</div>
+
+<p-menu #userLoginMenu popup="popup" [model]="userLogin" styleClass="fp-menu fp-user-menu"></p-menu>
+<div id="userMenu" tabindex="0" title="{{ loggedInUserName }}" (click)="userLoginMenu.toggle($event)" class="fp-right-img">
+  <img class="fp-icon-size" src="assets/icons/icon-user.svg" />
+</div>

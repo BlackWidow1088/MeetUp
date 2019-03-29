@@ -1,4 +1,10 @@
-<p>
-  main-layout works!
-</p>
-<router-outlet></router-outlet>
+
+<div class="app fp-container">
+  <app-header></app-header>
+  <app-breadcrumb></app-breadcrumb>
+  <!-- @TODO Fix a proper way to show banner msg -->
+  <div class="fp-base-container" #scrollContainer (scroll)="onScroll()">
+    <app-application-message-board></app-application-message-board>
+    <router-outlet (activate)="onActivate(scrollContainer) "></router-outlet>
+  </div>
+</div>

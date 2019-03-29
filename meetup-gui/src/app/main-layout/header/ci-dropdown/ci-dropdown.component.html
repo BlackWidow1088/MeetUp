@@ -1,0 +1,32 @@
+<div id="selectCIOption" ngbDropdown class="fp-header-select d-inline-block" [ngClass]="{ 'selected': (ciDropdownLabel && ciDropdownLabel !== 'Select a CI') }"
+  (openChange)="resetDropdownIfOpened($event)">
+  <button tabindex="0" class="btn btn-outline-primary" id="ciList" ngbDropdownToggle>{{ ciDropdownLabel }}</button>
+
+  <div ngbDropdownMenu aria-labelledby="ciList">
+    <span class="fp-global-search">
+      <i class="fa fa-search fp-searchicon"></i>
+
+      <input type="text" [(ngModel)]="ciQuery" (click)="$event.stopPropagation();" (keyup)="filterSystemsList($event)" placeholder="Type in a CI name"
+        ngDefaultControl>
+    </span>
+
+    <div class="ci-list-container">
+      <ng-container *ngIf="filteredSystemsList?.length">
+        <ul class="list-unstyled" *ngFor="let system of filteredSystemsList">
+          <span routerLink="/">{{ system.label }}</span>
+
+          <li *ngFor="let item of system.items; let idx = index">
+            <button #ci id="selectCIbtn{{item.systemName}}" class="dropdown-item" name="item" [ngClass]="{ 'ui-dropdown-item ui-state-highlight': selectedSystem?.systemName === item.systemName && selectedSystem?.systemCompany === item.systemCompany }"
+              [(ngModel)]="system.items[idx]" (click)="navigateTo(item?.systemRoute, item?.systemName)" ngDefaultControl>
+              {{ item.systemName }}
+            </button>
+          </li>
+        </ul>
+      </ng-container>
+
+      <div class="list-unstyled empty-list" *ngIf="!filteredSystemsList.length" (click)="$event.stopPropagation();">
+        <span i18n="ci filter empty list - select ci| Text for no ci found@@ci-filter-empty-list">No CI found.</span>
+      </div>
+    </div>
+  </div>
+</div>
